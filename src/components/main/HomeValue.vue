@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1 class="home__value-number">{{ number }} <span>+</span></h1>
-    <span class="home__value-description">
+    <h1 class="text-white text-h1-font-size font-font-medium">
+      {{ number }} <span class="text-second-color">+</span>
+    </h1>
+    <span class="flex text-text-color-light">
       {{ description1 }} <br />
       {{ description2 }}
     </span>
