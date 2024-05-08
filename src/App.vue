@@ -7,6 +7,11 @@
 
   <!--==================== FOOTER ====================-->
   <FooterComponent />
+
+  <!--========== SCROLL UP ==========-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="bx bx-chevrons-up"></i>
+  </a>
 </template>
 
 <script>
