@@ -14,7 +14,7 @@
         <i class="bx bxs-home-heart"></i
       ></a>
       <div
-        class="mx-0 my-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
+        class="my-0 mx-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
       >
         <ul class="flex justify-between items-center">
           <NavLink id="home" icon="bx-home-alt-2" name="Home" />
