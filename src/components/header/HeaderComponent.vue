@@ -1,7 +1,13 @@
 <template>
-  <header class="header" id="header">
-    <nav class="nav wrapper">
-      <a href="#" class="nav__logo">
+  <header
+    class="fixed top-0 left-0 container bg-transparent z-fixed transition duration-400 ease-in-out"
+    id="header"
+  >
+    <nav class="h-header-height flex justify-between items-center wrapper">
+      <a
+        href="#"
+        class="text-container-color hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out"
+      >
         Holux
         <i class="bx bxs-home-heart"></i
       ></a>
