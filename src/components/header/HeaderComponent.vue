@@ -15,30 +15,10 @@
         class="mx-0 my-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
       >
         <ul class="flex justify-between items-center">
-          <li class="nav__item">
-            <a href="#home" class="nav__link">
-              <i class="bx bx-home-alt-2"></i>
-              <span>Home</span></a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#popular" class="nav__link">
-              <i class="bx bx-building-house"></i>
-              <span>Residences</span></a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#value" class="nav__link">
-              <i class="bx bx-award"></i>
-              <span>Value</span></a
-            >
-          </li>
-          <li class="nav__item">
-            <a href="#contact" class="nav__link">
-              <i class="bx bx-phone"></i>
-              <span>Contact</span></a
-            >
-          </li>
+          <NavLink id="home" icon="bx-home-alt-2" name="Home" />
+          <NavLink id="popular" icon="bx-building-house" name="Residences" />
+          <NavLink id="value" icon="bx-award" name="Value" />
+          <NavLink id="contact" icon="bx-phone" name="Contact" />
         </ul>
       </div>
 
@@ -51,7 +31,9 @@
 </template>
 
 <script>
-export default {};
+import NavLink from "./NavLink.vue";
+
+export default { components: { NavLink } };
 </script>
 
 <style scoped>
