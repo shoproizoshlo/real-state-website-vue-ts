@@ -11,8 +11,10 @@
         Holux
         <i class="bx bxs-home-heart"></i
       ></a>
-      <div class="nav__menu">
-        <ul class="nav__list">
+      <div
+        class="mx-0 my-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
+      >
+        <ul class="flex justify-between items-center">
           <li class="nav__item">
             <a href="#home" class="nav__link">
               <i class="bx bx-home-alt-2"></i>
@@ -52,4 +54,11 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.nav__menu {
+  padding: 1.38rem 3rem;
+  width: 90%;
+  box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
+  border-radius: 1.25rem;
+}
+</style>

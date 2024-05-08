@@ -13,6 +13,7 @@ export default {
         "text-color": "hsl(228, 15%, 50%)",
         "text-color-light": "hsl(228, 12%, 75%)",
         "border-color": "hsl(228, 99%, 98%)",
+        "body-color": "#fff",
         "container-color": "#fff",
       },
       fontFamily: {
