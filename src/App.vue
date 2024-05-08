@@ -35,6 +35,9 @@ const swiper = new Swiper(".swiper", {
   modules: [Navigation, Pagination],
 });
 
+// =============== SCROLLREVEAL ===============
+import ScrollReveal from "scrollreveal";
+
 export default {
   components: {
     HeaderComponent,
