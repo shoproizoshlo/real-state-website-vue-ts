@@ -15,6 +15,9 @@
 </template>
 
 <script>
+// =============== BOXICONS ===============
+import "boxicons/css/boxicons.min.css";
+
 import HeaderComponent from "./components/header/HeaderComponent.vue";
 import MainComponent from "./components/main/MainComponent.vue";
 import FooterComponent from "./components/footer/FooterComponent.vue";
