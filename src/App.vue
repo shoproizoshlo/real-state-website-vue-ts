@@ -1,5 +1,4 @@
 <template>
-  <h1 class="text-3xl font-bold bg-black underline">Hello world!</h1>
   <!--==================== HEADER ====================-->
   <HeaderComponent />
 
