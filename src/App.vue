@@ -22,6 +22,19 @@ import HeaderComponent from "./components/header/HeaderComponent.vue";
 import MainComponent from "./components/main/MainComponent.vue";
 import FooterComponent from "./components/footer/FooterComponent.vue";
 
+// =============== SWIPER CSS ===============
+// core version + navigation, pagination modules:
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+// import styles bundle
+import "swiper/css/bundle";
+
+// init Swiper:
+const swiper = new Swiper(".swiper", {
+  // configure Swiper to use modules
+  modules: [Navigation, Pagination],
+});
+
 export default {
   components: {
     HeaderComponent,

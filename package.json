@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "boxicons": "^2.1.4",
+    "swiper": "^11.1.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
