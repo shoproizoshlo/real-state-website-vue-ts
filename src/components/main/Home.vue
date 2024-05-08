@@ -1,6 +1,6 @@
 <template>
   <section class="home section" id="home">
-    <div class="home__container container grid">
+    <div class="home__container wrapper grid">
       <div class="home__data">
         <h1 class="home__title">
           Discover <br />

@@ -1,6 +1,6 @@
 <template>
   <section class="subscribe section">
-    <div class="subscribe__container container">
+    <div class="subscribe__container wrapper">
       <h1 class="subscribe__title">Get Started with Holux</h1>
       <p class="subscribe__description">
         Subscribe and find super attractive price quotes from us, Find your

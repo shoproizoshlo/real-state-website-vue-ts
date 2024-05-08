@@ -1,6 +1,6 @@
 <template>
   <section class="value section" id="value">
-    <div class="value__container container grid">
+    <div class="value__container wrapper grid">
       <div class="value__images">
         <div class="value__orbe"></div>
         <div class="value__img">

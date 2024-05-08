@@ -1,6 +1,6 @@
 <template>
   <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav wrapper">
       <a href="#" class="nav__logo">
         Holux
         <i class="bx bxs-home-heart"></i

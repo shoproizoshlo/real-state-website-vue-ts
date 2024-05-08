@@ -166,7 +166,7 @@ body.dark-theme {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
+.wrapper {
   max-width: 1024px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -197,4 +197,17 @@ body.dark-theme {
 
 .main {
   overflow: hidden; /* For the animations ScrollReveal*/
+}
+
+@media screen and (max-width: 350px) {
+  .wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 1040px) {
+  .wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

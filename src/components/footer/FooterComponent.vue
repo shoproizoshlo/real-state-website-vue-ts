@@ -1,6 +1,6 @@
 <template>
   <footer class="footer section">
-    <div class="footer__container container grid">
+    <div class="footer__container wrapper grid">
       <div>
         <a href="#" class="footer__logo"
           >Holux <i class="bx bx-home-alt-2"></i
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="footer__info container">
+    <div class="footer__info wrapper">
       <span class="footer__copy"> &#169; Bedimcode. All rigths reserved </span>
       <div class="footer__privacy">
         <a href="#">Terms & Agreements</a>

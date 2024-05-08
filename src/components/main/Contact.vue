@@ -1,6 +1,6 @@
 <template>
   <section class="contact section" id="contact">
-    <div class="contact__container container grid">
+    <div class="contact__container wrapper grid">
       <div class="contact__images">
         <div class="contact__orbe"></div>
         <div class="contact__img">
