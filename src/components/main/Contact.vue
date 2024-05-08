@@ -4,7 +4,7 @@
       <div class="contact__images">
         <div class="contact__orbe"></div>
         <div class="contact__img">
-          <img src="./src/assets/img/contact.png" alt="contact" />
+          <img src="/src/assets/img/contact.png" alt="contact" />
         </div>
       </div>
       <div class="contact__content">

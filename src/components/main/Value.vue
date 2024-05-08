@@ -4,7 +4,7 @@
       <div class="value__images">
         <div class="value__orbe"></div>
         <div class="value__img">
-          <img src="./src/assets/img/value.jpg" alt="value" />
+          <img src="/src/assets/img/value.jpg" alt="value" />
         </div>
       </div>
       <div class="value__content">

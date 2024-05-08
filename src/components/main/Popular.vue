@@ -7,7 +7,7 @@
         <div class="swiper-wrapper">
           <article class="popular__card swiper-slide">
             <img
-              src="./src/assets/img/popular1.jpg"
+              src="/src/assets/img/popular1.jpg"
               alt="popular projet"
               class="popular__img"
             />
@@ -23,7 +23,7 @@
           </article>
           <article class="popular__card swiper-slide">
             <img
-              src="./src/assets/img/popular2.jpg"
+              src="/src/assets/img/popular2.jpg"
               alt="popular projet"
               class="popular__img"
             />
@@ -39,7 +39,7 @@
           </article>
           <article class="popular__card swiper-slide">
             <img
-              src="./src/assets/img/popular3.jpg"
+              src="/src/assets/img/popular3.jpg"
               alt="popular projet"
               class="popular__img"
             />
@@ -55,7 +55,7 @@
           </article>
           <article class="popular__card swiper-slide">
             <img
-              src="./src/assets/img/popular4.jpg"
+              src="/src/assets/img/popular4.jpg"
               alt="popular projet"
               class="popular__img"
             />
@@ -71,7 +71,7 @@
           </article>
           <article class="popular__card swiper-slide">
             <img
-              src="./src/assets/img/popular5.jpg"
+              src="/src/assets/img/popular5.jpg"
               alt="popular projet"
               class="popular__img"
             />
