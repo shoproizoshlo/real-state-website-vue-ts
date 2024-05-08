@@ -1,7 +1,7 @@
 <template>
   <header
     class="fixed top-0 left-0 container bg-transparent z-fixed transition duration-400 ease-in-out"
-    :class="{ 'bg-body-color scroll-header': isScrolled }"
+    :class="{ 'scroll-header': isScrolled }"
     id="header"
   >
     <nav class="h-header-height flex justify-between items-center wrapper">
@@ -63,9 +63,14 @@ export default defineComponent({
 }
 /* Change background header */
 .scroll-header {
+  background-color: var(--body-color);
   box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.1);
 }
 .scroll-header .change-theme {
   color: var(--title-color);
+}
+
+.nav__button {
+  display: none;
 }
 </style>
