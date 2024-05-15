@@ -17,72 +17,13 @@
           </p>
         </div>
         <div class="value__accordion">
-          <div class="value__accordion-item">
-            <header class="value__accordion-header">
-              <i class="bx bxs-shield-x value__accordion-icon"></i>
-              <h3 class="value__accordion-title">
-                Best interest rates on the market
-              </h3>
-              <div class="value__accordion-arrow">
-                <i class="bx bxs-down-arrow"></i>
-              </div>
-            </header>
-            <div class="value__accordion-content">
-              <p class="value__accordion-description">
-                Price we provides is the best for you, we guarantee no price
-                changes on your property due to various unexpected costs that
-                may come.
-              </p>
-            </div>
-          </div>
-          <div class="value__accordion-item">
-            <header class="value__accordion-header">
-              <i class="bx bxs-x-square value__accordion-icon"></i>
-              <h3 class="value__accordion-title">Prevent unstable prices</h3>
-              <div class="value__accordion-arrow">
-                <i class="bx bxs-down-arrow"></i>
-              </div>
-            </header>
-            <div class="value__accordion-content">
-              <p class="value__accordion-description">
-                Price we provides is the best for you, we guarantee no price
-                changes on your property due to various unexpected costs that
-                may come.
-              </p>
-            </div>
-          </div>
-          <div class="value__accordion-item">
-            <header class="value__accordion-header">
-              <i class="bx bxs-bar-chart-square value__accordion-icon"></i>
-              <h3 class="value__accordion-title">Best prices on the market</h3>
-              <div class="value__accordion-arrow">
-                <i class="bx bxs-down-arrow"></i>
-              </div>
-            </header>
-            <div class="value__accordion-content">
-              <p class="value__accordion-description">
-                Price we provides is the best for you, we guarantee no price
-                changes on your property due to various unexpected costs that
-                may come.
-              </p>
-            </div>
-          </div>
-          <div class="value__accordion-item">
-            <header class="value__accordion-header">
-              <i class="bx bxs-check-square value__accordion-icon"></i>
-              <h3 class="value__accordion-title">Security of your data</h3>
-              <div class="value__accordion-arrow">
-                <i class="bx bxs-down-arrow"></i>
-              </div>
-            </header>
-            <div class="value__accordion-content">
-              <p class="value__accordion-description">
-                Price we provides is the best for you, we guarantee no price
-                changes on your property due to various unexpected costs that
-                may come.
-              </p>
-            </div>
-          </div>
+          <AccordionItem
+            v-for="(item, index) in accordionItem"
+            :key="index"
+            :icon="item.icon"
+            :title="item.title"
+            :description="item.description"
+          />
         </div>
       </div>
     </div>
@@ -90,7 +31,42 @@
 </template>
 
 <script>
-export default {};
+import { ref } from "vue";
+import AccordionItem from "./AccordionItem.vue";
+
+export default {
+  components: { AccordionItem },
+  setup() {
+    const accordionItem = ref([
+      {
+        icon: "bxs-shield-x",
+        title: "Best interest rates on the market",
+        description:
+          "Price we provides is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.",
+      },
+      {
+        icon: "bxs-x-square",
+        title: "Prevent unstable prices",
+        description:
+          "Price we provides is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.",
+      },
+      {
+        icon: "bxs-bar-chart-square",
+        title: "Best prices on the market",
+        description:
+          "Price we provides is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.",
+      },
+      {
+        icon: "bxs-check-square",
+        title: "Security of your data",
+        description:
+          "Price we provides is the best for you, we guarantee no price changes on your property due to various unexpected costs that may come.",
+      },
+    ]);
+
+    return { accordionItem };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
