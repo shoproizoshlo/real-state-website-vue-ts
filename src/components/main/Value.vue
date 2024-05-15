@@ -1,9 +1,9 @@
 <template>
   <section class="value section" id="value">
-    <div class="value__container wrapper grid">
-      <div class="value__images">
+    <div class="gap-y-12 wrapper grid">
+      <div class="relative flex justify-center">
         <div class="value__orbe"></div>
-        <div class="value__img">
+        <div class="m-auto absolute overflow-hidden inset-0 value__img">
           <img src="/src/assets/img/value.jpg" alt="value" />
         </div>
       </div>
@@ -11,12 +11,12 @@
         <div class="value__data">
           <span class="section__subtitle">Our Value</span>
           <h2 class="section__title">Value We Give To You<span>.</span></h2>
-          <p class="value__description">
+          <p class="text-small-font-size mb-8">
             We always ready to help by providing the best service for you. We
             believe a good place to live can make your life better.
           </p>
         </div>
-        <div class="value__accordion">
+        <div class="grid gap-y-6">
           <AccordionItem
             v-for="(item, index) in accordionItem"
             :key="index"
@@ -69,4 +69,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.value__orbe {
+  width: 266px;
+  height: 316px;
+  background-color: hsl(228, 24%, 97%);
+  border-radius: 135px 135px 16px 16px;
+}
+.value__img {
+  width: 250px;
+  height: 300px;
+  border-radius: 125px 125px 12px 12px;
+  box-shadow: 0 16px 32px hsla(228, 66%, 25%, 0.25);
+}
+</style>
