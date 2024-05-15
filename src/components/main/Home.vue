@@ -14,7 +14,7 @@
 
         <form
           action=""
-          class="mb-4 py-1 ps-1 pe-3 bg-body-color flex items-center rounded-xl border-2 border-solid border-text-color-light"
+          class="mb-8 py-1 ps-1 pe-3 bg-body-color flex items-center rounded-xl border-2 border-solid border-text-color-light"
         >
           <i class="text-xl text-first-color bx bxs-map"></i>
           <input
@@ -40,9 +40,11 @@
         </div>
       </div>
 
-      <div class="home__images">
+      <div class="relative flex justify-center">
         <div class="home__orbe"></div>
-        <div class="home__img">
+        <div
+          class="absolute overflow-hidden inline-flex items-end -bottom-6 home__img"
+        >
           <img src="/src/assets/img/home.jpg" alt="home" />
         </div>
       </div>
@@ -69,5 +71,21 @@ export default {
 }
 .home__search-input::placeholder {
   color: var(--text-color-light);
+}
+.home__orbe {
+  width: 265px;
+  height: 284px;
+  background: linear-gradient(
+    100deg,
+    hsl(0, 0%, 16%) 93%,
+    hsl(0, 0%, 67%) 100%
+  );
+  border-radius: 135px 135px 0 0;
+}
+.home__img {
+  box-shadow: 0 16px 32px hsla(228, 66%, 25%, 0.25);
+  width: 250px;
+  height: 300px;
+  border-radius: 125px 125px 12px 12px;
 }
 </style>
