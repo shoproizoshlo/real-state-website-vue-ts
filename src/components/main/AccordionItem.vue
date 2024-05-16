@@ -1,11 +1,11 @@
 <template>
   <div class="bg--body-color rounded-lg py-4 px-3 value__accordion-item">
-    <header class="flex items-center cursor-pointer value__accordion-header">
+    <header class="flex items-center cursor-pointer">
       <i
         class="bx me-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
         :class="icon"
       ></i>
-      <h3 class="text-small-font-size value__accordion-title">{{ title }}</h3>
+      <h3 class="text-small-font-size">{{ title }}</h3>
       <div
         class="ms-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm value__accordion-arrow"
       >
@@ -13,9 +13,7 @@
       </div>
     </header>
     <div class="value__accordion-content">
-      <p
-        class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11 value__accordion-description"
-      >
+      <p class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11">
         {{ description }}
       </p>
     </div>
