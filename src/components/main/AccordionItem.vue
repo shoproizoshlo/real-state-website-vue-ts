@@ -12,7 +12,7 @@
         <i class="bx bxs-down-arrow"></i>
       </div>
     </header>
-    <div class="overflow-hidden h-0 value__accordion-content">
+    <div class="value__accordion-content">
       <p class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11">
         {{ description }}
       </p>
@@ -53,6 +53,8 @@ export default {
   transition: 0.4s;
 }
 .value__accordion-content {
+  overflow: hidden;
+  height: 0;
   transition: all 0.25s ease;
 }
 
