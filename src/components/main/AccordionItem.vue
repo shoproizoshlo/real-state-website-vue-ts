@@ -30,8 +30,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
   props: {
     icon: {
@@ -50,15 +48,10 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-  setup(props) {
-    const isOpen = ref(props.isOpen);
-
-    const toggleAccordion = () => {
-      isOpen.value = !isOpen.value;
-    };
-
-    return { isOpen, toggleAccordion };
+    toggleAccordion: {
+      type: Function,
+      required: true,
+    },
   },
 };
 </script>
@@ -81,7 +74,7 @@ export default {
   transition: all 0.25s ease;
 }
 
-/*Rotate icon and add shadows*/
+/* Rotate icon and add shadows */
 .accordion-open {
   box-shadow: 0 12px 32px hsla(228, 66%, 45%, 0.1);
 }

@@ -18,12 +18,13 @@
         </div>
         <div class="grid gap-y-6">
           <AccordionItem
-            v-for="(item, index) in accordionItem"
+            v-for="(item, index) in accordionItems"
             :key="index"
             :icon="item.icon"
             :title="item.title"
             :description="item.description"
-            :isOpen="false"
+            :isOpen="openIndex === index"
+            :toggleAccordion="() => toggleAccordion(index)"
           />
         </div>
       </div>
@@ -38,7 +39,8 @@ import AccordionItem from "./AccordionItem.vue";
 export default {
   components: { AccordionItem },
   setup() {
-    const accordionItem = ref([
+    const openIndex = ref(null);
+    const accordionItems = ref([
       {
         icon: "bxs-shield-x",
         title: "Best interest rates on the market",
@@ -65,7 +67,11 @@ export default {
       },
     ]);
 
-    return { accordionItem };
+    const toggleAccordion = (index) => {
+      openIndex.value = openIndex.value === index ? null : index;
+    };
+
+    return { accordionItems, openIndex, toggleAccordion };
   },
 };
 </script>
