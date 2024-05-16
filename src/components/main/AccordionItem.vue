@@ -20,7 +20,8 @@
     </header>
     <div
       class="value__accordion-content"
-      :style="{ height: isOpen ? '120px' : '0' }"
+      ref="content"
+      :style="{ height: contentHeight }"
     >
       <p class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11">
         {{ description }}
@@ -30,6 +31,8 @@
 </template>
 
 <script>
+import { ref, watch, nextTick } from "vue";
+
 export default {
   props: {
     icon: {
@@ -53,6 +56,24 @@ export default {
       required: true,
     },
   },
+  setup(props) {
+    const content = ref(null);
+    const contentHeight = ref("0");
+
+    const updateHeight = () => {
+      if (props.isOpen && content.value) {
+        nextTick(() => {
+          contentHeight.value = `${content.value.scrollHeight}px`;
+        });
+      } else {
+        contentHeight.value = "0";
+      }
+    };
+
+    watch(() => props.isOpen, updateHeight);
+
+    return { content, contentHeight };
+  },
 };
 </script>
 
@@ -71,7 +92,7 @@ export default {
 }
 .value__accordion-content {
   overflow: hidden;
-  transition: all 0.25s ease;
+  transition: height 0.25s ease;
 }
 
 /* Rotate icon and add shadows */
