@@ -1,6 +1,6 @@
 <template>
   <div class="bg--body-color rounded-lg py-4 px-3 value__accordion-item">
-    <header class="flex items-center cursor-pointer">
+    <header class="flex items-center cursor-pointer value__accordion-header">
       <i
         class="bx me-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
         :class="icon"
