@@ -23,6 +23,7 @@
             :icon="item.icon"
             :title="item.title"
             :description="item.description"
+            :isOpen="false"
           />
         </div>
       </div>

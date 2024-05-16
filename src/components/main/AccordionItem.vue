@@ -1,6 +1,12 @@
 <template>
-  <div class="bg--body-color rounded-lg py-4 px-3 value__accordion-item">
-    <header class="flex items-center cursor-pointer value__accordion-header">
+  <div
+    class="bg--body-color rounded-lg py-4 px-3 value__accordion-item"
+    :class="{ 'accordion-open': isOpen }"
+  >
+    <header
+      class="flex items-center cursor-pointer value__accordion-header"
+      @click="toggleAccordion"
+    >
       <i
         class="bx me-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
         :class="icon"
@@ -9,10 +15,13 @@
       <div
         class="ms-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm value__accordion-arrow"
       >
-        <i class="bx bxs-down-arrow"></i>
+        <i class="bx bxs-down-arrow" :class="{ 'bx-rotate-180': isOpen }"></i>
       </div>
     </header>
-    <div class="value__accordion-content">
+    <div
+      class="value__accordion-content"
+      :style="{ height: isOpen ? '120px' : '0' }"
+    >
       <p class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11">
         {{ description }}
       </p>
@@ -21,6 +30,8 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   props: {
     icon: {
@@ -35,6 +46,19 @@ export default {
       type: String,
       required: true,
     },
+    isOpen: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  setup(props) {
+    const isOpen = ref(props.isOpen);
+
+    const toggleAccordion = () => {
+      isOpen.value = !isOpen.value;
+    };
+
+    return { isOpen, toggleAccordion };
   },
 };
 </script>
@@ -54,7 +78,6 @@ export default {
 }
 .value__accordion-content {
   overflow: hidden;
-  height: 0;
   transition: all 0.25s ease;
 }
 
