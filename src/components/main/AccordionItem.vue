@@ -1,21 +1,26 @@
 <template>
-  <div class="bg--body-color rounded-lg py-4 px-3 value__accordion-item">
-    <header class="flex items-center cursor-pointer value__accordion-header">
+  <div
+    class="bg--body-color rounded-lg py-4 px-3 value__accordion-item"
+    :class="{ 'accordion-open': isOpen }"
+  >
+    <header class="flex items-center cursor-pointer" @click="toggleAccordion">
       <i
         class="bx me-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
         :class="icon"
       ></i>
-      <h3 class="text-small-font-size value__accordion-title">{{ title }}</h3>
+      <h3 class="text-small-font-size">{{ title }}</h3>
       <div
         class="ms-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm value__accordion-arrow"
       >
         <i class="bx bxs-down-arrow"></i>
       </div>
     </header>
-    <div class="value__accordion-content">
-      <p
-        class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11 value__accordion-description"
-      >
+    <div
+      class="value__accordion-content"
+      :style="{ height: isOpen ? contentHeight : '0' }"
+      ref="accordionContent"
+    >
+      <p class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11">
         {{ description }}
       </p>
     </div>
@@ -38,6 +43,37 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isOpen: false,
+      contentHeight: "0px",
+    };
+  },
+  methods: {
+    toggleAccordion() {
+      if (this.isOpen) {
+        this.closeAccordion();
+      } else {
+        this.openAccordion();
+      }
+    },
+    openAccordion() {
+      this.isOpen = true;
+      this.contentHeight = this.$refs.accordionContent.scrollHeight + "px";
+      this.$emit("accordion-toggled", this);
+    },
+    closeAccordion() {
+      this.isOpen = false;
+      this.contentHeight = "0px";
+    },
+  },
+  mounted() {
+    this.$root.$on("accordion-toggled", (openItem) => {
+      if (openItem !== this) {
+        this.closeAccordion();
+      }
+    });
+  },
 };
 </script>
 
@@ -56,11 +92,10 @@ export default {
 }
 .value__accordion-content {
   overflow: hidden;
-  height: 0;
-  transition: all 0.25s ease;
+  transition: height 0.25s ease;
 }
 
-/*Rotate icon and add shadows*/
+/* Rotate icon and add shadows */
 .accordion-open {
   box-shadow: 0 12px 32px hsla(228, 66%, 45%, 0.1);
 }
