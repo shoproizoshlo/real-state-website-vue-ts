@@ -1,6 +1,10 @@
 <template>
   <li class="nav__item">
-    <a :href="`#${id}`" class="text-text-color flex p-2 rounded-full nav__link">
+    <a
+      :href="`#${id}`"
+      class="text-text-color flex p-2 rounded-full nav__link"
+      :class="{ 'active-link': active }"
+    >
       <i :class="`text-xl bx ${icon}`"></i>
       <span class="hidden">{{ name }}</span>
     </a>
@@ -22,8 +26,19 @@ export default {
       type: String,
       required: true,
     },
+    active: {
+      type: Boolean,
+      required: true,
+    },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Active link */
+.active-link {
+  background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
+  color: #fff;
+  box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
+}
+</style>

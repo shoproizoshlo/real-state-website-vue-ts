@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed top-0 left-0 container bg-transparent z-fixed transition duration-400 ease-in-out"
+    class="fixed top-0 left-0 container bg-transparent z-10 transition duration-400 ease-in-out"
     :class="{ 'scroll-header': isScrolled }"
     id="header"
   >
@@ -17,10 +17,14 @@
         class="my-0 mx-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
       >
         <ul class="flex justify-between items-center">
-          <NavLink id="home" icon="bx-home-alt-2" name="Home" />
-          <NavLink id="popular" icon="bx-building-house" name="Residences" />
-          <NavLink id="value" icon="bx-award" name="Value" />
-          <NavLink id="contact" icon="bx-phone" name="Contact" />
+          <NavLink
+            v-for="section in sections"
+            :key="section.id"
+            :id="section.id"
+            :icon="section.icon"
+            :name="section.name"
+            :active="activeSection === section.id"
+          />
         </ul>
       </div>
 
@@ -33,23 +37,50 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import NavLink from "./NavLink.vue";
 
 export default defineComponent({
   components: { NavLink },
   setup() {
     const isScrolled = ref(false);
+    const sections = ref([
+      { id: "home", icon: "bx-home-alt-2", name: "Home" },
+      { id: "popular", icon: "bx-building-house", name: "Residences" },
+      { id: "value", icon: "bx-award", name: "Value" },
+      { id: "contact", icon: "bx-phone", name: "Contact" },
+    ]);
+    const activeSection = ref("");
 
     const handleScroll = () => {
       isScrolled.value = window.scrollY >= 50;
+      const scrollDown = window.scrollY;
+
+      sections.value.forEach((current) => {
+        const sectionElement = document.getElementById(current.id);
+        if (sectionElement) {
+          const sectionHeight = sectionElement.offsetHeight;
+          const sectionTop = sectionElement.offsetTop - 58;
+
+          if (
+            scrollDown > sectionTop &&
+            scrollDown <= sectionTop + sectionHeight
+          ) {
+            activeSection.value = current.id;
+          }
+        }
+      });
     };
 
     onMounted(() => {
       window.addEventListener("scroll", handleScroll);
     });
 
-    return { isScrolled };
+    onBeforeUnmount(() => {
+      window.removeEventListener("scroll", handleScroll);
+    });
+
+    return { isScrolled, sections, activeSection };
   },
 });
 </script>
@@ -72,5 +103,12 @@ export default defineComponent({
 
 .nav__button {
   display: none;
+}
+
+/* Active link */
+.active-link {
+  background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
+  color: #fff;
+  box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
 }
 </style>
