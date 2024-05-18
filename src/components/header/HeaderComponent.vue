@@ -29,7 +29,15 @@
       </div>
 
       <!--==================== THEME CHANGE BUTTON ====================-->
-      <i class="bx bx-moon change-theme" id="theme-button"></i>
+      <i
+        class="bx cursor-pointer text-white text-base"
+        :class="{
+          'bx-sun': !isDarkMode,
+          'bx-moon': isDarkMode,
+          'change-theme': isScrolled,
+        }"
+        @click="toggleDarkMode"
+      ></i>
 
       <a href="#" class="button nav__button"> Subscribe </a>
     </nav>
@@ -80,7 +88,27 @@ export default defineComponent({
       window.removeEventListener("scroll", handleScroll);
     });
 
-    return { isScrolled, sections, activeSection };
+    /*=============== DARK LIGHT THEME ===============*/
+    const isDarkMode = ref(false);
+
+    const toggleDarkMode = () => {
+      isDarkMode.value = !isDarkMode.value;
+      document.documentElement.classList.toggle("dark", isDarkMode.value);
+      localStorage.theme = isDarkMode.value ? "dark" : "light";
+    };
+
+    onMounted(() => {
+      isDarkMode.value =
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+      if (isDarkMode.value) {
+        document.documentElement.classList.add("dark");
+      }
+    });
+
+    return { isScrolled, sections, activeSection, isDarkMode, toggleDarkMode };
   },
 });
 </script>
@@ -110,5 +138,14 @@ export default defineComponent({
   background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
   color: #fff;
   box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
+}
+
+/*=============== THEME ===============*/
+.change-theme {
+  color: #fff;
+  transition: 0.3s;
+}
+.change-theme:hover {
+  color: var(--first-color-light);
 }
 </style>
