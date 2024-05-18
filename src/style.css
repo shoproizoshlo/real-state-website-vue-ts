@@ -198,6 +198,7 @@ body.dark-theme {
   overflow: hidden; /* For the animations ScrollReveal*/
 }
 
+/*=============== BUTTON ===============*/
 .button {
   display: inline-block;
   background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
@@ -213,6 +214,20 @@ body.dark-theme {
 
 .button:hover {
   box-shadow: 0 4px 12px hsla(228, 66%, 25%, 0.25);
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(228, 8%, 76%);
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(228, 8%, 64%);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(228, 8%, 54%);
 }
 
 @media screen and (max-width: 350px) {
