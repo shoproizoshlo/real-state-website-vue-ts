@@ -1,13 +1,13 @@
 <template>
   <header
-    class="fixed top-0 left-0 container bg-transparent z-50 transition duration-400 ease-in-out"
+    class="fixed top-0 left-0 container bg-transparent z-50 transition duration-400 ease-in-out header"
     :class="{ 'scroll-header': isScrolled }"
     id="header"
   >
-    <nav class="h-header-height flex justify-between items-center wrapper">
+    <nav class="h-header-height flex justify-between items-center nav wrapper">
       <a
         href="#"
-        class="text-container-color hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out"
+        class="text-container-color hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out nav__logo"
         :class="{ 'text-first-color': isScrolled }"
       >
         Holux
@@ -16,7 +16,7 @@
       <div
         class="my-0 mx-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
       >
-        <ul class="flex justify-between items-center">
+        <ul class="flex justify-between items-center nav__list">
           <NavLink
             v-for="section in sections"
             :key="section.id"
