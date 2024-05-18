@@ -1,17 +1,21 @@
 <template>
   <footer class="footer section">
-    <div class="footer__container wrapper grid">
+    <div class="gap-y-10 wrapper grid">
       <div>
-        <a href="#" class="footer__logo"
-          >Holux <i class="bx bx-home-alt-2"></i
+        <a
+          href="#"
+          class="mb-3 gap-x-1 text-first-color text-h3-font-size font-font-semi-bold inline-flex items-center"
+          >Holux <i class="bx bx-home-alt-2 text-xl"></i
         ></a>
-        <p class="footer__description">
+        <p class="text-small-font-size font-font-medium">
           Our vision is to make all people <br />
           the best place to live for them.
         </p>
       </div>
-      <FooterLinks :sections="sections" />
-      <!-- <div class="footer__content">
+      <div class="grid footer__content">
+        <FooterLinks :sections="sections" />
+      </div>
+      <!-- 
         <div>
           <h3 class="footer__title">About</h3>
           <ul class="footer__links">
@@ -77,13 +81,27 @@
             ></a>
           </ul>
         </div>
-      </div> -->
-    </div>
-    <div class="footer__info wrapper">
-      <span class="footer__copy"> &#169; Bedimcode. All rigths reserved </span>
-      <div class="footer__privacy">
-        <a href="#">Terms & Agreements</a>
-        <a href="#">Privacy Policy</a>
+    
+    --></div>
+    <div
+      class="flex mt-20 pb-24 flex-col text-center gap-y-6 footer__info wrapper"
+    >
+      <span
+        class="text-smaller-font-size font-font-medium text-text-color footer__copy"
+      >
+        &#169; Bedimcode. All rigths reserved
+      </span>
+      <div class="justify-center gap-x-5 footer__privacy">
+        <a
+          href="#"
+          class="text-smaller-font-size font-font-medium text-text-color"
+          >Terms & Agreements</a
+        >
+        <a
+          href="#"
+          class="text-smaller-font-size font-font-medium text-text-color"
+          >Privacy Policy</a
+        >
       </div>
     </div>
   </footer>
@@ -137,4 +155,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.footer__content {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 4rem;
+}
+</style>
