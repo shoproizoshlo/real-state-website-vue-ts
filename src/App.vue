@@ -11,7 +11,8 @@
   <!--========== SCROLL UP ==========-->
   <a
     href="#"
-    class="p-1 inline-flex fixed right-4 bg--container-color rounded text-title-color text-xl ztext-xl scrollup"
+    class="p-1 inline-flex fixed right-4 bg-container-color rounded text-title-color text-xl z-50 scrollup"
+    :class="{ 'show-scroll': showScroll }"
     id="scroll-up"
   >
     <i class="bx bx-chevrons-up"></i>
@@ -42,11 +43,33 @@ const swiper = new Swiper(".swiper", {
 // =============== SCROLLREVEAL ===============
 import ScrollReveal from "scrollreveal";
 
+import { ref, onMounted, onUnmounted } from "vue";
+
 export default {
   components: {
     HeaderComponent,
     MainComponent,
     FooterComponent,
+  },
+  setup() {
+    /*=============== SHOW SCROLL UP ===============*/
+    const showScroll = ref(false);
+
+    const scrollUp = () => {
+      showScroll.value = window.scrollY >= 350;
+    };
+
+    onMounted(() => {
+      window.addEventListener("scroll", scrollUp);
+      window.addEventListener("scroll", scrollActive);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener("scroll", scrollUp);
+      window.removeEventListener("scroll", scrollActive);
+    });
+
+    return { showScroll };
   },
 };
 
@@ -71,7 +94,6 @@ const scrollActive = () => {
     }
   });
 };
-window.addEventListener("scroll", scrollActive);
 </script>
 
 <style scoped>
@@ -86,6 +108,7 @@ window.addEventListener("scroll", scrollActive);
   bottom: -36%;
   box-shadow: 0 8px 12px hsla(228, 66%, 45%, 0.1);
   transition: 0.3s;
+  animation: 0.4s hideScroll;
 }
 .scrollup:hover {
   transform: translateY(-0.25rem);
@@ -94,5 +117,23 @@ window.addEventListener("scroll", scrollActive);
 /* Show Scroll Up*/
 .show-scroll {
   bottom: 8rem;
+  animation: 0.7s showScroll;
+}
+
+@keyframes showScroll {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 8rem;
+  }
+}
+@keyframes hideScroll {
+  0% {
+    bottom: 8rem;
+  }
+  100% {
+    bottom: -1rem;
+  }
 }
 </style>
