@@ -1,9 +1,9 @@
 <template>
   <section class="contact section" id="contact">
-    <div class="contact__container wrapper grid">
-      <div class="contact__images">
+    <div class="gap-y-8 wrapper grid">
+      <div class="relative flex justify-center">
         <div class="contact__orbe"></div>
-        <div class="contact__img">
+        <div class="m-auto absolute overflow-hidden inset-0 contact__img">
           <img src="/src/assets/img/contact.png" alt="contact" />
         </div>
       </div>
@@ -11,55 +11,21 @@
         <div class="contact__data">
           <span class="section__subtitle"> Contact Us</span>
           <h2 class="section__title">Easy to Contact us<span>.</span></h2>
-          <p class="contact__description">
+          <p class="mb-10 font-small-font-size">
             Is there a problem finding your dream home? Need a guide in buying
             first home? or need a consultation on residential issues? just
             contact us.
           </p>
         </div>
-
-        <div class="contact__card">
-          <div class="contact__card-box">
-            <div class="contact__card-info">
-              <i class="bx bxs-phone-call"></i>
-
-              <div>
-                <h3 class="contact__card-title">Call</h3>
-                <p class="contact__card-description">022.321.165.19</p>
-              </div>
-            </div>
-            <button class="button contact__card-button">Call Now</button>
-          </div>
-          <div class="contact__card-box">
-            <div class="contact__card-info">
-              <i class="bx bxs-message-rounded-dots"></i>
-              <div>
-                <h3 class="contact__card-title">Chat</h3>
-                <p class="contact__card-description">022.321.165.19</p>
-              </div>
-            </div>
-            <button class="button contact__card-button">Chat Now</button>
-          </div>
-          <div class="contact__card-box">
-            <div class="contact__card-info">
-              <i class="bx bxs-video"></i>
-              <div>
-                <h3 class="contact__card-title">Video Call</h3>
-                <p class="contact__card-description">022.321.165.19</p>
-              </div>
-            </div>
-            <button class="button contact__card-button">Video Call Now</button>
-          </div>
-          <div class="contact__card-box">
-            <div class="contact__card-info">
-              <i class="bx bxs-envelope"></i>
-              <div>
-                <h3 class="contact__card-title">Message</h3>
-                <p class="contact__card-description">022.321.165.19</p>
-              </div>
-            </div>
-            <button class="button contact__card-button">Message Now</button>
-          </div>
+        <div class="grid gap-y-5 gap-x-3 contact__card">
+          <ContactCard
+            v-for="(contact, index) in contactData"
+            :key="index"
+            :icon="contact.icon"
+            :title="contact.title"
+            :description="contact.description"
+            :button="contact.button"
+          />
         </div>
       </div>
     </div>
@@ -67,7 +33,60 @@
 </template>
 
 <script>
-export default {};
+import ContactCard from "./ContactCard.vue";
+export default {
+  components: {
+    ContactCard,
+  },
+  setup() {
+    const contactData = [
+      {
+        icon: "bxs-phone-call",
+        title: "Call",
+        description: "022.321.165.19",
+        button: "Call Now",
+      },
+      {
+        icon: "bxs-message-rounded-dots",
+        title: "Chat",
+        description: "022.321.165.19",
+        button: "Chat Now",
+      },
+      {
+        icon: "bxs-video",
+        title: "Video",
+        description: "022.321.165.19",
+        button: "Video Now",
+      },
+      {
+        icon: "bxs-envelope",
+        title: "Message",
+        description: "022.321.165.19",
+        button: "Message Now",
+      },
+    ];
+
+    return { contactData };
+  },
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.contact__orbe {
+  width: 266px;
+  height: 316px;
+  background-color: hsl(228, 24%, 97%);
+  border-radius: 135px 135px 16px 16px;
+}
+
+.contact__img {
+  margin: auto;
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+}
+
+.contact__card {
+  grid-template-columns: repeat(2, 1fr);
+}
+</style>
