@@ -10,7 +10,8 @@
           the best place to live for them.
         </p>
       </div>
-      <div class="footer__content">
+      <FooterLinks :sections="sections" />
+      <!-- <div class="footer__content">
         <div>
           <h3 class="footer__title">About</h3>
           <ul class="footer__links">
@@ -25,7 +26,7 @@
             </li>
           </ul>
         </div>
-        <div>
+           <div>
           <h3 class="footer__title">Company</h3>
           <ul class="footer__links">
             <li>
@@ -76,7 +77,7 @@
             ></a>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer__info wrapper">
       <span class="footer__copy"> &#169; Bedimcode. All rigths reserved </span>
@@ -89,7 +90,51 @@
 </template>
 
 <script>
-export default {};
+import { ref } from "vue";
+import FooterLinks from "./FooterLinks.vue";
+export default {
+  components: {
+    FooterLinks,
+  },
+  setup() {
+    const sections = ref([
+      {
+        title: "About",
+        links: [
+          { text: "About Us", href: "#" },
+          { text: "Features", href: "#" },
+          { text: "News & Blog", href: "#" },
+        ],
+      },
+      {
+        title: "Company",
+        links: [
+          { text: "How We Work?", href: "#" },
+          { text: "Capital", href: "#" },
+          { text: "Security", href: "#" },
+        ],
+      },
+      {
+        title: "Support",
+        links: [
+          { text: "FAQs", href: "#" },
+          { text: "Support center", href: "#" },
+          { text: "Contact Us", href: "#" },
+        ],
+      },
+      {
+        title: "Follow us",
+        socialLinks: [
+          { href: "https://www.facebook.com/", icon: "bx bxl-facebook-circle" },
+          { href: "https://www.instagram.com/", icon: "bx bxl-instagram-alt" },
+          { href: "https://www.pinterest.com/", icon: "bx bxl-pinterest" },
+        ],
+      },
+    ]);
+
+    return { sections };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
