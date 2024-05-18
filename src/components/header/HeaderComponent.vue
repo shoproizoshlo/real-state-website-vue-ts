@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed top-0 left-0 container bg-transparent z-10 transition duration-400 ease-in-out"
+    class="fixed top-0 left-0 container bg-transparent z-50 transition duration-400 ease-in-out"
     :class="{ 'scroll-header': isScrolled }"
     id="header"
   >

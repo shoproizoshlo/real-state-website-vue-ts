@@ -9,7 +9,11 @@
   <FooterComponent />
 
   <!--========== SCROLL UP ==========-->
-  <a href="#" class="scrollup" id="scroll-up">
+  <a
+    href="#"
+    class="p-1 inline-flex fixed right-4 bg--container-color rounded text-title-color text-xl ztext-xl scrollup"
+    id="scroll-up"
+  >
     <i class="bx bx-chevrons-up"></i>
   </a>
 </template>
@@ -75,5 +79,20 @@ window.addEventListener("scroll", scrollActive);
   background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
   color: #fff;
   box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup {
+  bottom: -36%;
+  box-shadow: 0 8px 12px hsla(228, 66%, 45%, 0.1);
+  transition: 0.3s;
+}
+.scrollup:hover {
+  transform: translateY(-0.25rem);
+  color: var(--first-color);
+}
+/* Show Scroll Up*/
+.show-scroll {
+  bottom: 8rem;
 }
 </style>
