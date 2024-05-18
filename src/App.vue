@@ -92,6 +92,7 @@ const scrollActive = () => {
     } else {
       sectionsClass.classList.remove("active-link");
     }
+    window.addEventListener("scroll", scrollActive);
   });
 };
 </script>
