@@ -120,6 +120,11 @@ export default defineComponent({
   box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
   border-radius: 1.25rem;
 }
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1.3rem 1.5em;
+  }
+}
 /* Change background header */
 .scroll-header {
   background-color: var(--body-color);

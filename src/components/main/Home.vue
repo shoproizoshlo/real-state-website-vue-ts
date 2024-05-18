@@ -25,7 +25,7 @@
           <button class="button">Search</button>
         </form>
 
-        <div class="flex gap-x-10">
+        <div class="flex gap-x-10 home__value">
           <HomeValue
             number="9K"
             description1="Premium"
@@ -87,5 +87,18 @@ export default {
   width: 250px;
   height: 300px;
   border-radius: 125px 125px 12px 12px;
+}
+@media screen and (max-width: 320px) {
+  .home__value {
+    column-gap: 1rem;
+  }
+  .home__img {
+    width: 220px;
+    height: 280px;
+  }
+  .home__orbe {
+    width: 240px;
+    height: 264px;
+  }
 }
 </style>
