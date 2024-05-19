@@ -1,9 +1,11 @@
 <template>
   <div>
-    <h1 class="text-white text-h1-font-size font-font-medium">
+    <h1
+      class="text-white text-h1-font-size font-font-medium home__value-number"
+    >
       {{ number }} <span class="text-second-color">+</span>
     </h1>
-    <span class="flex text-text-color-light">
+    <span class="flex text-text-color-light home__value-description">
       {{ description1 }} <br />
       {{ description2 }}
     </span>
@@ -20,4 +22,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
