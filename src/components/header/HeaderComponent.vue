@@ -1,22 +1,22 @@
 <template>
   <header
-    class="fixed top-0 left-0 container bg-transparent z-50 transition duration-400 ease-in-out header"
+    class="fixed top-0 left-0 w-full bg-transparent z-50 transition duration-400 ease-in-out header"
     :class="{ 'scroll-header': isScrolled }"
     id="header"
   >
     <nav class="h-header-height flex justify-between items-center nav wrapper">
       <a
         href="#"
-        class="text-container-color hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out nav__logo"
+        class="text-white hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out nav__logo"
         :class="{ 'text-first-color': isScrolled }"
       >
         Holux
-        <i class="bx bxs-home-heart"></i
+        <i class="bx bxs-home-heart text-base"></i
       ></a>
       <div
-        class="my-0 mx-auto fixed bottom-8 inset-x-0 bg-container-color transition duration-400 ease-in-out nav__menu"
+        class="my-0 mx-auto lg:ms-auto fixed bottom-8 left-0 right-0 bg-container-color nav__menu"
       >
-        <ul class="flex justify-between items-center nav__list">
+        <ul class="flex justify-between lg:gap-x-12 items-center nav__list">
           <NavLink
             v-for="section in sections"
             :key="section.id"
@@ -119,12 +119,12 @@ export default defineComponent({
   width: 90%;
   box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
   border-radius: 1.25rem;
+  transition: 0.4s;
 }
-@media screen and (max-width: 320px) {
-  .nav__menu {
-    padding: 1.3rem 1.5em;
-  }
+.nav__button {
+  display: none;
 }
+
 /* Change background header */
 .scroll-header {
   background-color: var(--body-color);
@@ -134,17 +134,6 @@ export default defineComponent({
   color: var(--title-color);
 }
 
-.nav__button {
-  display: none;
-}
-
-/* Active link */
-.active-link {
-  background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
-  color: #fff;
-  box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
-}
-
 /*=============== THEME ===============*/
 .change-theme {
   color: #fff;
@@ -152,5 +141,24 @@ export default defineComponent({
 }
 .change-theme:hover {
   color: var(--first-color-light);
+}
+
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1.3rem 1.5em;
+  }
+}
+@media screen and (min-width: 400px) {
+  .nav__menu {
+    width: 342px;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .nav__menu {
+    width: inherit;
+  }
 }
 </style>

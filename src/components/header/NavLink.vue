@@ -2,11 +2,11 @@
   <li class="nav__item">
     <a
       :href="`#${id}`"
-      class="text-text-color lg:text-text-light flex p-2 rounded-full nav__link"
+      class="text-text-color flex p-2 rounded-full nav__link"
       :class="{ 'active-link': active }"
     >
-      <i :class="`lg:hidden text-xl bx ${icon}`"></i>
-      <span class="hidden">{{ name }}</span>
+      <i class="" :class="`bx ${icon} text-xl inline`"></i>
+      <span class="hidden lg:inline">{{ name }}</span>
     </a>
   </li>
 </template>
@@ -38,22 +38,12 @@ export default {
 /* Active link */
 .active-link {
   background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
-  color: #fff;
   box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
+  color: #fff;
 }
 
-@media screen and (max-width: 1023px) {
-  .nav__link {
-    color: var(--text-color);
-    display: flex;
-    padding: 0.5rem;
-    border-radius: 50%;
-  }
-
+@media screen and (min-width: 1023px) {
   .nav__link i {
-    font-size: 1.22rem;
-  }
-  .nav__link span {
     display: none;
   }
 }
