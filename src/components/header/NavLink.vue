@@ -2,7 +2,7 @@
   <li class="nav__item">
     <a
       :href="`#${id}`"
-      class="text-text-color flex p-2 rounded-full nav__link"
+      class="text-text-color lg:text-text-color-light flex p-2 rounded-full nav__link"
       :class="{ 'active-link': active }"
     >
       <i class="" :class="`bx ${icon} text-xl inline`"></i>
@@ -45,6 +45,12 @@ export default {
 @media screen and (min-width: 1023px) {
   .nav__link i {
     display: none;
+  }
+  .active-link {
+    background: none;
+    box-shadow: none;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
   }
 }
 </style>

@@ -4,7 +4,7 @@
     :class="{ 'scroll-header': isScrolled }"
     id="header"
   >
-    <nav class="h-header-height flex justify-between items-center nav wrapper">
+    <nav class="flex justify-between items-center nav wrapper">
       <a
         href="#"
         class="text-white hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out nav__logo"
@@ -13,10 +13,8 @@
         Holux
         <i class="bx bxs-home-heart text-base"></i
       ></a>
-      <div
-        class="my-0 mx-auto lg:ms-auto fixed bottom-8 left-0 right-0 bg-container-color nav__menu"
-      >
-        <ul class="flex justify-between lg:gap-x-12 items-center nav__list">
+      <div class="nav__menu">
+        <ul class="flex justify-between items-center lg:gap-x-12 nav__list">
           <NavLink
             v-for="section in sections"
             :key="section.id"
@@ -30,7 +28,7 @@
 
       <!--==================== THEME CHANGE BUTTON ====================-->
       <i
-        class="bx cursor-pointer text-white text-base"
+        class="bx change-theme"
         :class="{
           'bx-sun': !isDarkMode,
           'bx-moon': isDarkMode,
@@ -114,13 +112,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.nav__menu {
-  padding: 1.38rem 3rem;
-  width: 90%;
-  box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
-  border-radius: 1.25rem;
-  transition: 0.4s;
+.nav {
+  height: var(--header-height);
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
+
 .nav__button {
   display: none;
 }
@@ -136,21 +134,46 @@ export default defineComponent({
 
 /*=============== THEME ===============*/
 .change-theme {
+  font-size: 1.25rem;
   color: #fff;
+  cursor: pointer;
   transition: 0.3s;
 }
 .change-theme:hover {
-  color: var(--first-color-light);
+  color: var(--first-color);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1023px) {
   .nav__menu {
-    padding: 1.3rem 1.5em;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    background-color: var(--container-color);
+    padding: 1.38rem 3rem;
+    width: 90%;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
+    transition: 0.4s;
+  }
+  .nav__list {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+  }
+  .scroll-header .change-theme {
+    color: var(--title-color);
   }
 }
 @media screen and (min-width: 400px) {
   .nav__menu {
     width: 342px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .nav__menu {
+    padding: 1.3rem 1.5em;
   }
 }
 @media screen and (min-width: 1023px) {
@@ -159,6 +182,18 @@ export default defineComponent({
   }
   .nav__menu {
     width: inherit;
+    margin-left: auto;
+  }
+  .nav__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__button {
+    display: inline-block;
+  }
+  .change-theme {
+    margin: 0 3rem;
+    color: var(--text-color-light);
   }
 }
 </style>
