@@ -184,10 +184,10 @@ export default defineComponent({
     width: inherit;
     margin-left: auto;
   }
-  .nav__list {
+  /* .nav__list {
     display: flex;
     column-gap: 3rem;
-  }
+  } */
   .nav__button {
     display: inline-block;
   }
