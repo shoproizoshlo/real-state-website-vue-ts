@@ -1,20 +1,24 @@
 <template>
   <section class="home section" id="home">
-    <div class="home__container wrapper grid">
-      <div class="home__data">
-        <h1 class="text-white mb-5 text-biggest-font-size home__title">
+    <div
+      class="pt-16 gap-y-14 md:pt-8 lg:pt-20 lg:gap-x-8 home__container wrapper grid"
+    >
+      <div class="md:pb-8 lg:pb-16">
+        <h1
+          class="mb-5 lg:mb-8 text-biggest-font-size lg:text-biggest-font-size-large text-white home__title"
+        >
           Discover <br />
           Most Suitable <br />
           Property
         </h1>
-        <p class="text-text-color-light mb-8 home__description">
+        <p class="text-text-color-light mb-8 lg:mb-12 home__description">
           Find a variety of properties that suit you very easily, forget all
           difficulties in finding a residence for you
         </p>
 
         <form
           action=""
-          class="mb-8 py-1 ps-1 pe-3 bg-body-color flex items-center rounded-xl border-2 border-solid border-text-color-light home__search"
+          class="mb-8 lg:mb-12 py-1 ps-1 pe-3 bg-body-color flex items-center rounded-xl border-2 border-solid border-text-color-light home__search"
         >
           <i class="text-xl text-first-color bx bxs-map"></i>
           <input
@@ -25,7 +29,7 @@
           <button class="button">Search</button>
         </form>
 
-        <div class="flex gap-x-10 home__value">
+        <div class="flex gap-x-10 lg:gap-x-14 home__value">
           <HomeValue
             v-for="(value, index) in values"
             :key="index"
@@ -37,9 +41,9 @@
       </div>
 
       <div class="relative flex justify-center home__images">
-        <div class="home__orbe"></div>
+        <div class="md:self-end home__orbe"></div>
         <div
-          class="absolute overflow-hidden inline-flex items-end -bottom-6 home__img"
+          class="absolute overflow-hidden inline-flex items-end -bottom-6 lg:-bottom-10 home__img"
         >
           <img src="/src/assets/img/home.jpg" alt="home" />
         </div>
@@ -72,34 +76,34 @@ export default {
   background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%);
   padding-bottom: 0;
 }
+/* pt-16 gap-y-14 md:pt-8 lg:pt-20 lg:gap-x-8*/
 .home__container {
-  padding-top: 4rem;
-  row-gap: 3.5rem;
+  /* padding-top: 4rem; */
+  /* row-gap: 3.5rem; */
 }
-.home__title,
+/* .home__title, */
 .home__value-number {
   color: #fff;
 }
+/* mb-5 lg:mb-8 text-biggest-font-size text-white */
 .home__title {
-  font-size: var(--biggest-font-size);
-  line-height: 120%; /*!!!*/
-  margin-bottom: 1.25rem;
+  line-height: 120%;
+  /* font-size: var(--biggest-font-size); */
+  /* margin-bottom: 1.25rem; */
 }
+/* text-text-color-light mb-8 lg:mb-24 */
 .home__description {
-  color: var(--text-color-light);
-  margin-bottom: 2rem;
-}
-.home__search-input::placeholder {
-  color: var(--text-color-light);
+  /* color: var(--text-color-light); */
+  /* margin-bottom: 2rem; */
 }
 .home__search {
-  margin-bottom: 2rem;
   padding: 0.35rem 0.35rem 0.35rem 0.75rem;
+  /* margin-bottom: 2rem;
   background-color: var(--body-color);
   display: flex;
   align-items: center;
   border-radius: 0.75rem;
-  border: 3px solid var(--text-color-light);
+  border: 3px solid var(--text-color-light); */
 }
 /* text-xl text-first-color */
 .home__search i {
@@ -108,24 +112,24 @@ export default {
 }
 /* my-0 mx-2 w-11/12 bg-body-color text-text-color */
 .home__search-input {
-  margin: 0 0.5rem;
   width: 90%;
+  /* margin: 0 0.5rem;
   background-color: var(--body-color);
-  color: var(--text-color);
+  color: var(--text-color); */
 }
 .home__search-input::placeholder {
   color: var(--text-color-light);
 }
 /* flex gap-x-10 */
-.home__value {
+/* .home__value {
   display: flex;
   column-gap: 2.5rem;
-}
-.home__images {
+} */
+/* .home__images {
   position: relative;
   display: flex;
   justify-content: center;
-}
+} */
 
 .home__orbe {
   width: 265px;
@@ -139,11 +143,12 @@ export default {
 }
 /* absolute overflow-hidden inline-flex items-end -bottom-6 */
 .home__img {
-  position: absolute;
+  /* position: absolute;
   overflow: hidden;
   display: inline-flex;
   align-items: flex-end;
-  bottom: -1.5rem;
+  bottom: -1.5rem; */
+
   box-shadow: 0 16px 32px hsla(228, 66%, 25%, 0.25);
   width: 250px;
   height: 300px;
@@ -175,13 +180,14 @@ export default {
 @media screen and (min-width: 767px) {
   .home__container {
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
   }
   .home__orbe {
-    align-self: flex-end;
+    /* align-self: flex-end; */
   }
+  /* md:pb-8 lg:pb-16 */
   .home__data {
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
   }
 }
 @media screen and (min-width: 1023px) {
@@ -189,22 +195,25 @@ export default {
     padding-bottom: 0;
   }
   .home__container {
-    padding-top: 5rem;
-    column-gap: 2rem;
+    /* padding-top: 5rem; */
+    /* column-gap: 2rem; */
   }
   .home__data {
-    padding-bottom: 4rem;
+    /* padding-bottom: 4rem; */
   }
+  /* lg:mb-8 */
   .home__title {
     margin-bottom: 2rem;
   }
-  .home__description,
+  /* lg:mb-12 */
+  /* .home__description, */
   .home__search {
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
   }
-  .home__value {
+  /* lg:gap-x-14 */
+  /* .home__value {
     column-gap: 3.5rem;
-  }
+  } */
   .home__orbe {
     width: 504px;
     height: 611px;
@@ -214,7 +223,7 @@ export default {
     width: 472px;
     height: 634px;
     border-radius: 236px 236px 12px 12px;
-    bottom: -2.5rem;
+    /* bottom: -2.5rem; */
   }
 }
 @media screen and (min-width: 1040px) {

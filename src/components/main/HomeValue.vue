@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1
-      class="text-white text-h1-font-size font-font-medium home__value-number"
+      class="text-white text-h1-font-size lg:text-h1-font-size-large font-font-medium home__value-number"
     >
       {{ number }} <span class="text-second-color">+</span>
     </h1>
