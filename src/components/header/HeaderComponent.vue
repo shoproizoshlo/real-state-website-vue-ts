@@ -114,9 +114,6 @@ export default defineComponent({
 <style scoped>
 .nav {
   height: var(--header-height);
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 
 .nav__button {
@@ -157,11 +154,6 @@ export default defineComponent({
     box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
     transition: 0.4s;
   }
-  .nav__list {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-  }
   .scroll-header .change-theme {
     color: var(--title-color);
   }
@@ -184,10 +176,6 @@ export default defineComponent({
     width: inherit;
     margin-left: auto;
   }
-  /* .nav__list {
-    display: flex;
-    column-gap: 3rem;
-  } */
   .nav__button {
     display: inline-block;
   }
