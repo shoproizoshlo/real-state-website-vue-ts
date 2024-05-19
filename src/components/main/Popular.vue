@@ -1,6 +1,6 @@
 <template>
   <section class="popular section" id="popular">
-    <div class="container">
+    <div class="container wrapper">
       <span class="section__subtitle">Best Choice</span>
       <h2 class="section__title">Popular Residences<span>.</span></h2>
       <div class="popular__container swiper" ref="swiperContainer">
