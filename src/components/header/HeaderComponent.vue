@@ -8,7 +8,6 @@
       <a
         href="#"
         class="text-white hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out nav__logo"
-        :class="{ 'text-first-color': isScrolled }"
       >
         Holux
         <i class="bx bxs-home-heart text-base"></i
@@ -124,6 +123,9 @@ export default defineComponent({
 .scroll-header {
   background-color: var(--body-color);
   box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.1);
+}
+.scroll-header .nav__logo {
+  color: var(--first-color);
 }
 .scroll-header .change-theme {
   color: var(--title-color);
