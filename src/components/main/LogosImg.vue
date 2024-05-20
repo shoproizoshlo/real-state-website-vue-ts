@@ -25,4 +25,10 @@ export default {
 .logos__img img:hover {
   opacity: 0.6;
 }
+
+@media screen and (min-width: 1023px) {
+  .logos__img img {
+    height: 100px;
+  }
+}
 </style>

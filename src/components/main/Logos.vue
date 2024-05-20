@@ -1,7 +1,7 @@
 <template>
   <section class="logos section">
     <div
-      class="pt-8 grid-cols-2 gap-y-12 gap-x-8 justify-items-center wrapper grid"
+      class="pt-8 grid-cols-2 gap-y-12 gap-x-8 justify-items-center logos__container wrapper grid"
     >
       <LogosImg
         v-for="(logo, index) in logosUrl"
@@ -38,4 +38,17 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+@media screen and (max-width: 320px) {
+  .logos__container {
+    gap: 2rem 1rem;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .logos__container {
+    grid-template-columns: repeat(4, max-content);
+    justify-content: center;
+  }
+}
+</style>
