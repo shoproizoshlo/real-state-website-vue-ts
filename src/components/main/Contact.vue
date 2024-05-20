@@ -1,12 +1,6 @@
 <template>
   <section class="contact section" id="contact">
     <div class="contact__container wrapper grid">
-      <!-- <div class="relative flex justify-center">
-        <div class="contact__orbe"></div>
-        <div class="m-auto absolute overflow-hidden inset-0 contact__img">
-          <img src="/src/assets/img/contact.png" alt="contact" />
-        </div>
-      </div> -->
       <OrbeImg :url="'./src/assets/img/contact.png'" />
       <div class="contact__content">
         <div class="contact__data">
@@ -84,5 +78,37 @@ export default {
   gap: 1.25rem 0.75rem;
 
   grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 350px) {
+  .contact__card {
+    grid-template-columns: repeat(1, 100px);
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 576px) {
+  .contact__card {
+    grid-template-columns: repeat(2, 192px);
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 767px) {
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .contact__card {
+    justify-content: inherit;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .contact__container {
+    align-items: flex-start;
+    column-gap: 5rem;
+  }
+  .contact__card {
+    grid-template-columns: repeat(2, 200px);
+  }
 }
 </style>

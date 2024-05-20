@@ -1,5 +1,5 @@
 <template>
-  <div class="value__images">
+  <div class="value__images" :class="contact ? 'value__images-order' : ''">
     <div class="value__orbe"></div>
     <div class="value__img">
       <img :src="url" alt="value" />
@@ -51,6 +51,11 @@ export default {
   .value__orbe {
     width: 236px;
     height: 280px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .value__images-order {
+    order: 1;
   }
 }
 @media screen and (min-width: 1023px) {

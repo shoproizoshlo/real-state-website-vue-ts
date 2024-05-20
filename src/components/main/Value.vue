@@ -1,12 +1,6 @@
 <template>
   <section class="value section" id="value">
     <div class="value__container wrapper grid">
-      <!-- <div class="value__images">
-        <div class="value__orbe"></div>
-        <div class="value__img">
-          <img src="/src/assets/img/value.jpg" alt="value" />
-        </div>
-      </div> -->
       <OrbeImg :url="'./src/assets/img/value.jpg'" />
       <div class="value__content">
         <div class="value__data">

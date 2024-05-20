@@ -79,9 +79,6 @@ export default {
 }
 
 @media screen and (min-width: 1023px) {
-  .contact__card {
-    grid-template-columns: repeat(2, 200px);
-  }
   .contact__card-box {
     padding: 28px 1.5rem 1.5rem;
   }
