@@ -1,12 +1,13 @@
 <template>
   <section class="value section" id="value">
-    <div class="gap-y-12 wrapper grid">
-      <div class="relative flex justify-center">
+    <div class="gap-y-12 wrapper value__container grid">
+      <!-- <div class="value__images">
         <div class="value__orbe"></div>
-        <div class="m-auto absolute overflow-hidden inset-0 value__img">
+        <div class="value__img">
           <img src="/src/assets/img/value.jpg" alt="value" />
         </div>
-      </div>
+      </div> -->
+      <OrbeImg />
       <div class="value__content">
         <div class="value__data">
           <span class="section__subtitle">Our Value</span>
@@ -35,9 +36,10 @@
 <script>
 import { ref } from "vue";
 import AccordionItem from "./AccordionItem.vue";
+import OrbeImg from "./OrbeImg.vue";
 
 export default {
-  components: { AccordionItem },
+  components: { AccordionItem, OrbeImg },
   setup() {
     const openIndex = ref(null);
     const accordionItems = ref([
@@ -77,16 +79,24 @@ export default {
 </script>
 
 <style scoped>
-.value__orbe {
-  width: 266px;
-  height: 316px;
-  background-color: hsl(228, 24%, 97%);
-  border-radius: 135px 135px 16px 16px;
+.value__container {
+  row-gap: 3rem;
 }
-.value__img {
-  width: 250px;
-  height: 300px;
-  border-radius: 125px 125px 12px 12px;
-  box-shadow: 0 16px 32px hsla(228, 66%, 25%, 0.25);
+.value__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+@media screen and (max-width: 320px) {
+  .value__orbe {
+    width: 236px;
+    height: 280px;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .value__container {
+    align-items: flex-start;
+    column-gap: 5rem;
+  }
 }
 </style>

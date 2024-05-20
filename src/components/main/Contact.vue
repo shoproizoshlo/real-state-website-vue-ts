@@ -1,12 +1,13 @@
 <template>
   <section class="contact section" id="contact">
     <div class="gap-y-8 wrapper grid">
-      <div class="relative flex justify-center">
+      <!-- <div class="relative flex justify-center">
         <div class="contact__orbe"></div>
         <div class="m-auto absolute overflow-hidden inset-0 contact__img">
           <img src="/src/assets/img/contact.png" alt="contact" />
         </div>
-      </div>
+      </div> -->
+      <OrbeImg />
       <div class="contact__content">
         <div class="contact__data">
           <span class="section__subtitle"> Contact Us</span>
@@ -34,9 +35,12 @@
 
 <script>
 import ContactCard from "./ContactCard.vue";
+import OrbeImg from "./OrbeImg.vue";
+
 export default {
   components: {
     ContactCard,
+    OrbeImg,
   },
   setup() {
     const contactData = [
