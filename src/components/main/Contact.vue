@@ -85,7 +85,7 @@ export default {
 
 @media screen and (max-width: 350px) {
   .contact__card {
-    grid-template-columns: repeat(1, 100px);
+    grid-template-columns: repeat(1, 150px);
     justify-content: center;
   }
 }
