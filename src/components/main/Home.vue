@@ -1,8 +1,6 @@
 <template>
-  <section class="pb-0 lg:pb-0 home section" id="home">
-    <div
-      class="pt-16 gap-y-14 md:pt-8 lg:pt-20 lg:gap-x-8 home__container wrapper grid"
-    >
+  <section class="home section" id="home">
+    <div class="home__container wrapper grid">
       <div class="md:pb-8 lg:pb-16">
         <h1
           class="mb-5 lg:mb-8 text-biggest-font-size lg:text-biggest-font-size-large text-white home__title"
@@ -40,11 +38,9 @@
         </div>
       </div>
 
-      <div class="relative flex justify-center home__images">
-        <div class="md:self-end home__orbe"></div>
-        <div
-          class="absolute overflow-hidden inline-flex items-end -bottom-6 lg:-bottom-10 home__img"
-        >
+      <div class="home__images">
+        <div class="home__orbe"></div>
+        <div class="home__img">
           <img src="/src/assets/img/home.jpg" alt="home" />
         </div>
       </div>
@@ -73,8 +69,14 @@ export default {
 
 <style scoped>
 .home {
+  padding-bottom: 0;
   background: linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%);
 }
+.home__container {
+  padding-top: 4rem;
+  row-gap: 3.5rem;
+}
+
 .home__title {
   line-height: 120%;
 }
@@ -85,6 +87,11 @@ export default {
   color: var(--text-color-light);
 }
 
+.home__images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 .home__orbe {
   width: 265px;
   height: 284px;
@@ -96,6 +103,12 @@ export default {
   border-radius: 135px 135px 0 0;
 }
 .home__img {
+  position: absolute;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: flex-end;
+  bottom: -1.5rem;
+
   box-shadow: 0 16px 32px hsla(228, 66%, 25%, 0.25);
   width: 250px;
   height: 300px;
@@ -128,6 +141,9 @@ export default {
   .home__container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .home__orbe {
+    align-self: flex-end;
+  }
 }
 @media screen and (min-width: 1023px) {
   .home__orbe {
@@ -136,6 +152,8 @@ export default {
     border-radius: 256px 256px 0 0;
   }
   .home__img {
+    bottom: -2.5rem;
+
     width: 472px;
     height: 634px;
     border-radius: 236px 236px 12px 12px;
