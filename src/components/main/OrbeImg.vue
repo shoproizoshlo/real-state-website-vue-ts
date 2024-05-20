@@ -14,6 +14,10 @@ export default {
       type: String,
       required: true,
     },
+    contact: {
+      type: Boolean,
+      required: true,
+    },
   },
 };
 </script>

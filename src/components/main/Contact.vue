@@ -1,7 +1,7 @@
 <template>
   <section class="contact section" id="contact">
     <div class="contact__container wrapper grid">
-      <OrbeImg :url="'./src/assets/img/contact.png'" />
+      <OrbeImg :url="'./src/assets/img/contact.png'" :contact="true" />
       <div class="contact__content">
         <div class="contact__data">
           <span class="section__subtitle"> Contact Us</span>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import ContactCard from "./ContactCard.vue";
 import OrbeImg from "./OrbeImg.vue";
 
@@ -64,7 +65,9 @@ export default {
       },
     ];
 
-    return { contactData };
+    const contact = ref(true);
+
+    return { contactData, contact };
   },
 };
 </script>
@@ -105,7 +108,7 @@ export default {
 @media screen and (min-width: 1023px) {
   .contact__container {
     align-items: flex-start;
-    column-gap: 5rem;
+    column-gap: 4rem;
   }
   .contact__card {
     grid-template-columns: repeat(2, 200px);

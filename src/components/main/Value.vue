@@ -1,7 +1,7 @@
 <template>
   <section class="value section" id="value">
     <div class="value__container wrapper grid">
-      <OrbeImg :url="'./src/assets/img/value.jpg'" />
+      <OrbeImg :url="'./src/assets/img/value.jpg'" :contact="false" />
       <div class="value__content">
         <div class="value__data">
           <span class="section__subtitle">Our Value</span>
@@ -67,7 +67,9 @@ export default {
       openIndex.value = openIndex.value === index ? null : index;
     };
 
-    return { accordionItems, openIndex, toggleAccordion };
+    const contact = ref(false);
+
+    return { accordionItems, openIndex, toggleAccordion, contact };
   },
 };
 </script>
