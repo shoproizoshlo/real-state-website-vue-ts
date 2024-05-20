@@ -184,6 +184,11 @@ body.dark-theme {
   overflow: hidden; /* For the animations ScrollReveal*/
 }
 
+.value__description {
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+
 /*=============== BUTTON ===============*/
 .button {
   display: inline-block;
@@ -234,6 +239,12 @@ body.dark-theme {
   }
   .section__subtitle {
     font-size: var(--normal-font-size);
+  }
+
+  .value__description,
+  .contact__description {
+    font-size: var(--normal-font-size);
+    margin-bottom: 2.5rem;
   }
 }
 @media screen and (min-width: 1040px) {

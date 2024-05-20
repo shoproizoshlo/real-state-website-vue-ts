@@ -1,6 +1,6 @@
 <template>
   <section class="value section" id="value">
-    <div class="gap-y-12 wrapper value__container grid">
+    <div class="value__container wrapper grid">
       <!-- <div class="value__images">
         <div class="value__orbe"></div>
         <div class="value__img">
@@ -12,12 +12,12 @@
         <div class="value__data">
           <span class="section__subtitle">Our Value</span>
           <h2 class="section__title">Value We Give To You<span>.</span></h2>
-          <p class="text-small-font-size mb-8">
+          <p class="value__description">
             We always ready to help by providing the best service for you. We
             believe a good place to live can make your life better.
           </p>
         </div>
-        <div class="grid gap-y-6">
+        <div class="value__accordion">
           <AccordionItem
             v-for="(item, index) in accordionItems"
             :key="index"
@@ -82,15 +82,21 @@ export default {
 .value__container {
   row-gap: 3rem;
 }
-.value__container {
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+.value__accordion {
+  display: grid;
+  row-gap: 1.5rem;
 }
 
 @media screen and (max-width: 320px) {
   .value__orbe {
     width: 236px;
     height: 280px;
+  }
+}
+@media screen and (min-width: 767px) {
+  .value__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
   }
 }
 @media screen and (min-width: 1023px) {
