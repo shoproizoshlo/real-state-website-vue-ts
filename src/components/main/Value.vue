@@ -12,7 +12,7 @@
         <div class="value__data">
           <span class="section__subtitle">Our Value</span>
           <h2 class="section__title">Value We Give To You<span>.</span></h2>
-          <p class="value__description">
+          <p class="section__description">
             We always ready to help by providing the best service for you. We
             believe a good place to live can make your life better.
           </p>

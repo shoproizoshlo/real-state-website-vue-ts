@@ -184,7 +184,7 @@ body.dark-theme {
   overflow: hidden; /* For the animations ScrollReveal*/
 }
 
-.value__description {
+.section__description {
   font-size: var(--small-font-size);
   margin-bottom: 2rem;
 }
@@ -241,8 +241,7 @@ body.dark-theme {
     font-size: var(--normal-font-size);
   }
 
-  .value__description,
-  .contact__description {
+  .section__description {
     font-size: var(--normal-font-size);
     margin-bottom: 2.5rem;
   }
