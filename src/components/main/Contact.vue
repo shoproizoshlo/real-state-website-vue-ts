@@ -7,7 +7,7 @@
           <img src="/src/assets/img/contact.png" alt="contact" />
         </div>
       </div> -->
-      <OrbeImg />
+      <OrbeImg :url="'./src/assets/img/contact.png'" />
       <div class="contact__content">
         <div class="contact__data">
           <span class="section__subtitle"> Contact Us</span>

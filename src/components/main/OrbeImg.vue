@@ -2,13 +2,20 @@
   <div class="value__images">
     <div class="value__orbe"></div>
     <div class="value__img">
-      <img src="/src/assets/img/contact.png" alt="value" />
+      <img :src="url" alt="value" />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    url: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped>
