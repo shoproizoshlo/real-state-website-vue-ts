@@ -48,4 +48,16 @@ export default {
 .popular__card:hover {
   box-shadow: 0 12px 16px hsla(228, 66%, 45%, 0.1);
 }
+@media screen and (max-width: 320px) {
+  .popular__card {
+    width: 230px;
+    padding: 0.5rem 0.5rem 0.75rem;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .popular__card {
+    width: 320px;
+    padding: 0.75rem 0.75rem 2rem;
+  }
+}
 </style>

@@ -132,4 +132,10 @@ export default {
 .swiper-button-next {
   right: calc(50% - 3rem);
 }
+
+@media screen and (min-width: 1023px) {
+  .popular__container {
+    padding-top: 3rem;
+  }
+}
 </style>
