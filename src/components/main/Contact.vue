@@ -1,6 +1,8 @@
 <template>
   <section class="contact section" id="contact">
-    <div class="contact__container wrapper grid">
+    <div
+      class="gap-y-8 lg:gap-x-16 md:items-center lg:items-start contact__container wrapper grid"
+    >
       <OrbeImg :url="'./src/assets/img/contact.png'" :contact="true" />
       <div class="contact__content">
         <div class="contact__data">
@@ -12,7 +14,7 @@
             contact us.
           </p>
         </div>
-        <div class="contact__card">
+        <div class="grid gap-y-5 gap-x-3 contact__card">
           <ContactCard
             v-for="(contact, index) in contactData"
             :key="index"
@@ -73,12 +75,14 @@ export default {
 </script>
 
 <style scoped>
+/* gap-y-8 lg:gap-x-16 md:items-center lg:items-start*/
 .contact__container {
-  row-gap: 2rem;
+  /* row-gap: 2rem; */
 }
+/* grid gap-y-5 gap-x-3 */
 .contact__card {
-  display: grid;
-  gap: 1.25rem 0.75rem;
+  /* display: grid; */
+  /* gap: 1.25rem 0.75rem; */
 
   grid-template-columns: repeat(2, 1fr);
 }
@@ -98,7 +102,7 @@ export default {
 @media screen and (min-width: 767px) {
   .contact__container {
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
+    /* align-items: center; */
   }
   .contact__card {
     justify-content: inherit;
@@ -107,8 +111,8 @@ export default {
 
 @media screen and (min-width: 1023px) {
   .contact__container {
-    align-items: flex-start;
-    column-gap: 4rem;
+    /* align-items: flex-start; */
+    /* column-gap: 4rem; */
   }
   .contact__card {
     grid-template-columns: repeat(2, 200px);
