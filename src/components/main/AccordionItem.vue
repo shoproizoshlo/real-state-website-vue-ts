@@ -1,26 +1,33 @@
 <template>
-  <div class="value__accordion-item" :class="{ 'accordion-open': isOpen }">
+  <div
+    class="py-4 lg:py-5 px-3 lg:pt-5 lg:pb-4 bg-body-color rounded-lg value__accordion-item"
+    :class="{ 'accordion-open': isOpen }"
+  >
     <header
       class="flex items-center cursor-pointer value__accordion-header"
       @click="toggleAccordion"
     >
       <i
-        class="bx me-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
+        class="bx mr-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
         :class="icon"
       ></i>
-      <h3 class="text-small-font-size">{{ title }}</h3>
+      <h3 class="text-small-font-size lg:text-normal-font-size-large">
+        {{ title }}
+      </h3>
       <div
-        class="ms-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm value__accordion-arrow"
+        class="ml-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm value__accordion-arrow"
       >
         <i class="bx bxs-down-arrow" :class="{ 'bx-rotate-180': isOpen }"></i>
       </div>
     </header>
     <div
-      class="value__accordion-content"
+      class="overflow-hidden value__accordion-content"
       ref="content"
       :style="{ height: contentHeight }"
     >
-      <p class="text-smaller-font-size pt-5 pe-9 pb-0 ps-11">
+      <p
+        class="text-smaller-font-size lg:text-small-font-size-large pt-5 pr-9 pb-0 lg:pb-4 pl-11"
+      >
         {{ description }}
       </p>
     </div>
@@ -77,55 +84,19 @@ export default {
 <style scoped>
 .value__accordion-item {
   border: 2px solid var(--border-color);
-
-  padding: 1rem 0.75rem;
-  background-color: var(--body-color);
-  border-radius: 0.5rem;
 }
-/* flex items-center cursor-pointer */
-.value__accordion-header {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-/* me-3 p-1 bg-first-color-lighten rounded text-lg text-first-color */
 .value__accordion-icon {
-  background-color: var(--first-color-lighten);
-  padding: 5px;
-  border-radius: 0.25rem;
-  font-size: 18px;
-  color: var(--first-color);
-  margin-right: 0.75rem;
-
   transition: 0.3s;
 }
-/* text-small-font-size */
-.value__accordion-title {
-  font-size: var(--small-font-size);
-}
-/* me-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm */
 .value__accordion-arrow {
-  display: inline-flex;
-  background-color: var(--first-color-lighten);
-  padding: 0.25rem;
-  color: var(--first-color);
-  border-radius: 2px;
-  font-size: 18px;
-  margin-left: auto;
-
   transition: 0.3s;
 }
 
 .value__accordion-arrow i {
   transition: 0.4s;
 }
-/* text-smaller-font-size pt-5 pe-9 pb-0 ps-11 */
-.value__accordion-description {
-  font-size: var(--smaller-font-size);
-  padding: 1.25rem 2.5rem 0 2.75rem;
-}
+
 .value__accordion-content {
-  overflow: hidden;
   height: 0;
   transition: all 0.25s ease;
 }
@@ -142,18 +113,5 @@ export default {
 }
 .accordion-open .value__accordion-arrow i {
   transform: rotate(-180deg);
-}
-
-@media screen and (min-width: 1023px) {
-  .value__accordion-title {
-    font-size: var(--normal-font-size);
-  }
-  .value__accordion-item {
-    padding: 1.25rem 1.25rem 1.25rem 1rem;
-  }
-  .value__accordion-description {
-    padding-bottom: 1rem;
-    font-size: var(--small-font-size);
-  }
 }
 </style>
