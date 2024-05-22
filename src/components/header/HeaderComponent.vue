@@ -4,7 +4,7 @@
     :class="{ 'scroll-header': isScrolled }"
     id="header"
   >
-    <nav class="flex justify-between items-center nav wrapper">
+    <nav class="flex justify-between items-center h-header-height nav wrapper">
       <a
         href="#"
         class="text-white hover:text-first-color inline-flex items-center gap-x-1 font-medium transition duration-300 ease-in-out nav__logo"
@@ -12,7 +12,9 @@
         Holux
         <i class="bx bxs-home-heart text-base"></i
       ></a>
-      <div class="nav__menu">
+      <div
+        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color lg:bg-transparent nav__menu"
+      >
         <ul class="flex justify-between items-center lg:gap-x-12 nav__list">
           <NavLink
             v-for="section in sections"
@@ -111,10 +113,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.nav {
-  height: var(--header-height);
-}
-
 .nav__button {
   display: none;
 }
@@ -144,13 +142,6 @@ export default defineComponent({
 
 @media screen and (max-width: 1023px) {
   .nav__menu {
-    margin: 0 auto;
-    position: fixed;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    background-color: var(--container-color);
-    padding: 1.38rem 3rem;
     width: 90%;
     border-radius: 1.25rem;
     box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
@@ -176,7 +167,7 @@ export default defineComponent({
   }
   .nav__menu {
     width: inherit;
-    margin-left: auto;
+    /* margin-left: auto; */
   }
   .nav__button {
     display: inline-block;
