@@ -13,7 +13,7 @@
         <i class="bx bxs-home-heart text-base"></i
       ></a>
       <div
-        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color lg:bg-transparent nav__menu"
+        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color lg:bg-transparent duration-300 nav__menu"
       >
         <ul class="flex justify-between items-center lg:gap-x-12 nav__list">
           <NavLink
@@ -145,7 +145,6 @@ export default defineComponent({
     width: 90%;
     border-radius: 1.25rem;
     box-shadow: 0 8px 24px hsla(228, 66%, 45%, 0.15);
-    transition: 0.4s;
   }
   .scroll-header .change-theme {
     color: var(--title-color);
@@ -167,7 +166,6 @@ export default defineComponent({
   }
   .nav__menu {
     width: inherit;
-    /* margin-left: auto; */
   }
   .nav__button {
     display: inline-block;

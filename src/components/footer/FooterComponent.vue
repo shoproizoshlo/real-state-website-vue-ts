@@ -92,10 +92,6 @@ export default {
 .footer__content {
   grid-template-columns: repeat(2, max-content);
 }
-.footer__privacy {
-  justify-content: center;
-  column-gap: 1.25rem;
-}
 
 @media screen and (max-width: 320px) {
   .footer__content {
