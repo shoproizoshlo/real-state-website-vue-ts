@@ -1,6 +1,8 @@
 <template>
   <section class="value section" id="value">
-    <div class="value__container wrapper grid">
+    <div
+      class="gap-y-12 lg:gap-x-20 md:items-center lg:items-start value__container wrapper grid"
+    >
       <OrbeImg :url="'./src/assets/img/value.jpg'" :contact="false" />
       <div class="value__content">
         <div class="value__data">
@@ -11,7 +13,7 @@
             believe a good place to live can make your life better.
           </p>
         </div>
-        <div class="value__accordion">
+        <div class="grid gap-y-6 value__accordion">
           <AccordionItem
             v-for="(item, index) in accordionItems"
             :key="index"
@@ -75,12 +77,14 @@ export default {
 </script>
 
 <style scoped>
+/* gap-y-12 lg:gap-x-20 md:items-center lg:items-start */
 .value__container {
-  row-gap: 3rem;
+  /* row-gap: 3rem; */
 }
+/* grid gap-y-6 */
 .value__accordion {
-  display: grid;
-  row-gap: 1.5rem;
+  /* display: grid;
+  row-gap: 1.5rem; */
 }
 
 @media screen and (max-width: 320px) {
@@ -97,8 +101,8 @@ export default {
 }
 @media screen and (min-width: 1023px) {
   .value__container {
-    align-items: flex-start;
-    column-gap: 5rem;
+    /* align-items: flex-start; */
+    /* column-gap: 5rem; */
   }
 }
 </style>
