@@ -1,7 +1,7 @@
 <template>
   <section class="logos section">
     <div
-      class="pt-8 grid-cols-2 gap-y-12 gap-x-8 justify-items-center logos__container wrapper grid"
+      class="pt-8 grid-cols-2 gap-y-12 gap-x-8 justify-items-center md:justify-center logos__container wrapper grid"
     >
       <LogosImg
         v-for="(logo, index) in logosUrl"
@@ -48,7 +48,6 @@ export default {
 @media screen and (min-width: 767px) {
   .logos__container {
     grid-template-columns: repeat(4, max-content);
-    justify-content: center;
   }
 }
 </style>
