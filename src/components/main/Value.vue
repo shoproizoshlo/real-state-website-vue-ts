@@ -77,16 +77,6 @@ export default {
 </script>
 
 <style scoped>
-/* gap-y-12 lg:gap-x-20 md:items-center lg:items-start */
-.value__container {
-  /* row-gap: 3rem; */
-}
-/* grid gap-y-6 */
-.value__accordion {
-  /* display: grid;
-  row-gap: 1.5rem; */
-}
-
 @media screen and (max-width: 320px) {
   .value__orbe {
     width: 236px;
@@ -97,12 +87,6 @@ export default {
   .value__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-  }
-}
-@media screen and (min-width: 1023px) {
-  .value__container {
-    /* align-items: flex-start; */
-    /* column-gap: 5rem; */
   }
 }
 </style>
