@@ -24,7 +24,7 @@
           <input
             type="search"
             placeholder="Search by location..."
-            class="my-0 mx-2 w-11/12 bg-body-color dark:bg-body-color-dark text-text-color dark:text-text-color-dark home__search-input"
+            class="my-0 mx-2 w-11/12 bg-body-color dark:bg-body-color-dark text-text-color dark:text-text-color-dark dark:shadow-none home__search-input"
           />
           <button class="button">Search</button>
         </form>
