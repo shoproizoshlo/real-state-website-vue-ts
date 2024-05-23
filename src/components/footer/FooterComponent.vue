@@ -4,7 +4,7 @@
       <div>
         <a
           href="#"
-          class="mb-3 gap-x-1 text-first-color text-h3-font-size font-font-semi-bold inline-flex items-center footer__logo"
+          class="mb-3 gap-x-1 text-first-color dark:text-first-color-dark text-h3-font-size font-font-semi-bold inline-flex items-center footer__logo"
           >Holux <i class="bx bx-home-alt-2 text-xl"></i
         ></a>
         <p class="text-small-font-size font-font-medium footer__description">
@@ -20,19 +20,19 @@
       class="flex mt-20 pb-24 lg:pb-8 flex-col lg:flex-row text-center lg:justify-between gap-y-6 footer__info wrapper"
     >
       <span
-        class="text-smaller-font-size text-text-color gont-font-medium footer__copy"
+        class="text-smaller-font-size text-text-color dark:text-text-color-dark gont-font-medium footer__copy"
       >
         &#169; Bedimcode. All rigths reserved
       </span>
       <div class="flex gap-x-5 justify-center footer__privacy">
         <a
           href="#"
-          class="text-smaller-font-size text-text-color gont-font-medium"
+          class="text-smaller-font-size text-text-color dark:text-text-color-dark gont-font-medium"
           >Terms & Agreements</a
         >
         <a
           href="#"
-          class="text-smaller-font-size text-text-color gont-font-medium"
+          class="text-smaller-font-size text-text-color dark:text-text-color-dark gont-font-medium"
           >Privacy Policy</a
         >
       </div>

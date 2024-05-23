@@ -7,7 +7,7 @@
       <li v-for="link in section.links" :key="link.text">
         <a
           :href="link.href"
-          class="text-small-font-size text-text-color hover:text-title-color font-font-medium duration-300 footer__link"
+          class="text-small-font-size text-text-color dark:text-text-color-dark hover:text-title-color dark:hover:text-title-color-dark font-font-medium duration-300 footer__link"
           >{{ link.text }}</a
         >
       </li>
@@ -17,7 +17,7 @@
         <a
           :href="socialLink.href"
           target="_blank"
-          class="text-xl text-text-color hover:text-title-color duration-300 footer__social-link"
+          class="text-xl text-text-color dark:text-text-color-dark hover:text-title-color dark:hover:text-title-color-dark duration-300 footer__social-link"
         >
           <i :class="socialLink.icon"></i>
         </a>
