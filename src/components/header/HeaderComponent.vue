@@ -13,7 +13,7 @@
         <i class="bx bxs-home-heart text-base"></i
       ></a>
       <div
-        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color lg:bg-transparent duration-300 nav__menu"
+        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color dark:bg-container-color-dark lg:bg-transparent duration-300 nav__menu"
       >
         <ul class="flex justify-between items-center lg:gap-x-12 nav__list">
           <NavLink
@@ -132,14 +132,17 @@ export default defineComponent({
 
 /* Change background header */
 .scroll-header {
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
   box-shadow: 0 1px 4px hsla(228, 4%, 15%, 0.1);
 }
+.scroll-header {
+  @apply bg-body-color dark:bg-body-color-dark;
+}
 .scroll-header .nav__logo {
-  color: var(--first-color);
+  @apply text-first-color dark:text-first-color-dark;
 }
 .scroll-header .change-theme {
-  color: var(--title-color);
+  @apply text-title-color dark:text-title-color-dark;
 }
 
 /*=============== THEME ===============*/
