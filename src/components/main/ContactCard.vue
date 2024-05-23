@@ -38,7 +38,7 @@ export default {
   border: 2px solid;
 }
 .contact__card-box {
-  @apply border-border-color dark:border-border-color-dark;
+  @apply border-border-color dark:border-border-color-dark dark:hover:shadow-none;
 }
 .contact__card-button {
   font-size: var(--small-font-size);
@@ -51,7 +51,7 @@ export default {
   box-shadow: none;
 }
 .contact__card-button {
-  @apply bg-first-color-lighten hover:bg-first-color dark:bg-border-color-dark dark:hover:bg-first-color-dark text-first-color hover:text-white dark:text-first-color-dark dark:hover:text-white;
+  @apply bg-first-color-lighten hover:bg-first-color dark:bg-container-color-dark dark:hover:bg-first-color-dark text-first-color hover:text-white dark:text-first-color-dark dark:hover:text-white;
 }
 .contact__card-button:hover {
   /* background-color: var(--first-color); */
