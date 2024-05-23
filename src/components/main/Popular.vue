@@ -33,7 +33,13 @@ import Swiper from "swiper";
 
 export default {
   components: { PopularCard },
-  setup() {
+  props: {
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
     const popularResidences = ref([
       {
         url: "/src/assets/img/popular1.jpg",
@@ -75,6 +81,8 @@ export default {
     let swiperPopular;
 
     onMounted(() => {
+      props.sr.reveal(" .popular__container");
+
       swiperPopular = new Swiper(".popular__container", {
         spaceBetween: 32,
         grabCursor: true,
