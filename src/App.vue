@@ -11,7 +11,7 @@
   <!--========== SCROLL UP ==========-->
   <a
     href="#"
-    class="p-1 inline-flex fixed right-4 bg-container-color rounded text-title-color text-xl z-50 scrollup"
+    class="p-1 inline-flex fixed right-4 bg-container-color dark:bg-container-color-dark rounded text-title-color hover:text-first-color dark:text-title-color-dark dark:hover:text-first-color-dark text-xl z-50 scrollup"
     :class="{ 'show-scroll': showScroll }"
     id="scroll-up"
   >
@@ -98,11 +98,11 @@ const scrollActive = () => {
 </script>
 
 <style scoped>
-.active-link {
+/* .active-link {
   background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
   color: #fff;
   box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
-}
+} */
 
 /*=============== SCROLL UP ===============*/
 .scrollup {
@@ -113,7 +113,7 @@ const scrollActive = () => {
 }
 .scrollup:hover {
   transform: translateY(-0.25rem);
-  color: var(--first-color);
+  /* color: var(--first-color); */
 }
 /* Show Scroll Up*/
 .show-scroll {
