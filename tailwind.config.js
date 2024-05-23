@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -8,13 +9,20 @@ export default {
         "first-color-alt": "hsl(228, 66%, 47%)",
         "first-color-light": "hsl(228, 62%, 59%)",
         "first-color-lighten": "hsl(228, 100%, 97%)",
+        "first-color-dark": "hsl(228, 66%, 62%)",
         "second-color": "hsl(25, 83%, 53%)",
+        "second-color-dark": "hsl(25, 57%, 54%)",
         "title-color": "hsl(228, 57%, 28%)",
         "text-color": "hsl(228, 15%, 50%)",
         "text-color-light": "hsl(228, 12%, 75%)",
+        "text-color-dark": "hsl(228, 8%, 70%)",
+        "title-color-dark": "hsl(228, 8%, 95%)",
         "border-color": "hsl(228, 99%, 98%)",
+        "border-color-dark": "hsl(228, 16%, 14%)",
         "body-color": "#fff",
+        "body-color-dark": "hsl(228, 12%, 8%)",
         "container-color": "#fff",
+        "container-color-dark": "hsl(228, 16%, 12%)",
       },
       fontFamily: {
         body: ["Poppins", "sans-serif"],

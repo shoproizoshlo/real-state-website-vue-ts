@@ -66,16 +66,23 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
   transition: 0.3s; /* For animation dark mode */
+  /* background-color: var(--body-color); */
+  /* color: var(--text-color); */
 }
-
+body {
+  @apply bg-body-color dark:bg-body-color-dark text-text-color dark:text-text-color-dark;
+}
 h1,
 h2,
 h3 {
-  color: var(--title-color);
+  /* color: var(--title-color); */
   font-weight: var(--font-semi-bold);
+}
+h1,
+h2,
+h3 {
+  @apply text-title-color dark:text-title-color-dark;
 }
 
 ul {
@@ -171,13 +178,19 @@ body.dark-theme {
 }
 
 .section__title span {
-  color: var(--second-color);
+  /* color: var(--second-color); */
+}
+.section__title span {
+  @apply text-second-color dark:text-second-color-dark;
 }
 
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
   color: var(--second-color);
+}
+.section__subtitle {
+  @apply text-second-color dark:text-second-color-dark;
 }
 
 .main {

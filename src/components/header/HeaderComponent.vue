@@ -31,18 +31,17 @@
       <i
         class="bx change-theme"
         :class="{
-          'bx-sun': !isDarkMode,
-          'bx-moon': isDarkMode,
+          'bx-sun': !isDark,
+          'bx-moon': isDark,
           'change-theme': isScrolled,
         }"
-        @click="toggleDarkMode"
+        @click="toggleTheme"
       ></i>
 
       <a href="#" class="button nav__button"> Subscribe </a>
     </nav>
   </header>
 </template>
-
 <script lang="ts">
 import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import NavLink from "./NavLink.vue";
@@ -88,26 +87,40 @@ export default defineComponent({
     });
 
     /*=============== DARK LIGHT THEME ===============*/
-    const isDarkMode = ref(false);
+    // const isDarkMode = ref(false);
 
-    const toggleDarkMode = () => {
-      isDarkMode.value = !isDarkMode.value;
-      document.documentElement.classList.toggle("dark", isDarkMode.value);
-      localStorage.theme = isDarkMode.value ? "dark" : "light";
-    };
+    // const toggleDarkMode = () => {
+    //   isDarkMode.value = !isDarkMode.value;
+    //   document.documentElement.classList.toggle("dark", isDarkMode.value);
+    //   localStorage.theme = isDarkMode.value ? "dark" : "light";
+    // };
+
+    // onMounted(() => {
+    //   isDarkMode.value =
+    //     localStorage.theme === "dark" ||
+    //     (!("theme" in localStorage) &&
+    //       window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    //   if (isDarkMode.value) {
+    //     document.documentElement.classList.add("dark");
+    //   }
+    // });
+    const isDark = ref(false);
 
     onMounted(() => {
-      isDarkMode.value =
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-      if (isDarkMode.value) {
-        document.documentElement.classList.add("dark");
-      }
+      isDark.value = document.documentElement.classList.contains("dark");
     });
 
-    return { isScrolled, sections, activeSection, isDarkMode, toggleDarkMode };
+    const toggleTheme = () => {
+      isDark.value = !isDark.value;
+      if (isDark.value) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    return { isScrolled, sections, activeSection, isDark, toggleTheme };
   },
 });
 </script>
