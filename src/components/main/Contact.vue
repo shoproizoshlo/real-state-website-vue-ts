@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import ContactCard from "./ContactCard.vue";
 import OrbeImg from "./OrbeImg.vue";
 
@@ -39,7 +39,14 @@ export default {
     ContactCard,
     OrbeImg,
   },
-  setup() {
+  props: {
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  setup(props) {
     const contactData = [
       {
         icon: "bxs-phone-call",
@@ -68,6 +75,11 @@ export default {
     ];
 
     const contact = ref(true);
+
+    onMounted(() => {
+      props.sr.reveal("contact__content", { origin: "left" });
+      props.sr.reveal("contact__images", { origin: "right" });
+    });
 
     return { contactData, contact };
   },
