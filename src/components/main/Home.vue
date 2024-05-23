@@ -16,13 +16,15 @@
 
         <form
           action=""
-          class="mb-8 lg:mb-12 py-1 ps-1 pe-3 bg-body-color flex items-center rounded-xl border-2 border-solid border-text-color-light home__search"
+          class="mb-8 lg:mb-12 py-1 ps-1 pe-3 bg-body-color dark:bg-body-color-dark flex items-center rounded-xl border-2 border-solid border-text-color-light dark:border-border-color-dark home__search"
         >
-          <i class="text-xl text-first-color bx bxs-map"></i>
+          <i
+            class="text-xl text-first-color dark:text-first-color-dark bx bxs-map"
+          ></i>
           <input
             type="search"
             placeholder="Search by location..."
-            class="my-0 mx-2 w-11/12 bg-body-color text-text-color home__search-input"
+            class="my-0 mx-2 w-11/12 bg-body-color dark:bg-body-color-dark text-text-color dark:text-text-color-dark home__search-input"
           />
           <button class="button">Search</button>
         </form>
