@@ -118,12 +118,10 @@ export default {
   bottom: 0;
   width: initial;
   height: initial;
-  /* background-color: var(--container-color); */
   border: 2px solid;
   padding: 6px;
   border-radius: 0.5rem;
   font-size: 1.5rem;
-  /* color: var(--first-color); */
 }
 .swiper-button-next,
 .swiper-button-prev {
