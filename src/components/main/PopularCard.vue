@@ -1,6 +1,6 @@
 <template>
   <article
-    class="my-0 mx-auto pt-2 lg:pt-3 pb-6 px-2 lg:px-3 lg:pl-8 bg-container-color dark:bg-container-color-dark rounded-2xl popular__card swiper-slide"
+    class="my-0 mx-auto pt-2 lg:pt-3 pb-6 px-2 lg:px-3 bg-container-color dark:bg-container-color-dark rounded-2xl popular__card swiper-slide"
   >
     <img
       :src="url"
