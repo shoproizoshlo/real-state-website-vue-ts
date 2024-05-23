@@ -55,6 +55,9 @@ export default {
 .popular__card:hover {
   box-shadow: 0 12px 16px hsla(228, 66%, 45%, 0.1);
 }
+.popular__card:hover {
+  @apply dark:hover:shadow-none;
+}
 
 @media screen and (max-width: 320px) {
   .popular__card {

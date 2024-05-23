@@ -39,11 +39,13 @@ export default {
   height: 300px;
   border-radius: 125px 125px 12px 12px;
   box-shadow: 0 16px 32px hsla(228, 66%, 25%, 0.25);
-
   position: absolute;
   overflow: hidden;
   inset: 0;
   margin: auto;
+}
+.value__img {
+  @apply dark:shadow-none;
 }
 @media screen and (max-width: 320px) {
   .value__img {

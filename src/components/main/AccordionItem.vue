@@ -8,14 +8,14 @@
       @click="toggleAccordion"
     >
       <i
-        class="bx mr-3 p-1 bg-first-color-lighten dark:bg-border-color-dark rounded text-lg text-first-color dark:text-first-color-dark value__accordion-icon"
+        class="bx mr-3 p-1 bg-first-color-lighten dark:bg-container-color-dark rounded text-lg text-first-color dark:text-first-color-dark value__accordion-icon"
         :class="icon"
       ></i>
       <h3 class="text-small-font-size lg:text-normal-font-size-large">
         {{ title }}
       </h3>
       <div
-        class="ml-auto p-1 inline-flex bg-first-color-lighten dark:bg-border-color-dark text-lg text-first-color dark:text-first-color-dark rounded-sm value__accordion-arrow"
+        class="ml-auto p-1 inline-flex bg-first-color-lighten dark:bg-container-color-dark text-lg text-first-color dark:text-first-color-dark rounded-sm value__accordion-arrow"
       >
         <i class="bx bxs-down-arrow" :class="{ 'bx-rotate-180': isOpen }"></i>
       </div>
@@ -113,6 +113,11 @@ export default {
 }
 .accordion-open .value__accordion-arrow {
   box-shadow: 0 2px 4px hsla(228, 66%, 45%, 0.1);
+}
+.accordion-open,
+.accordion-open .value__accordion-icon,
+.accordion-open .value__accordion-arrow {
+  @apply dark:shadow-none;
 }
 .accordion-open .value__accordion-arrow i {
   transform: rotate(-180deg);
