@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <!--==================== HOME ====================-->
-    <Home />
+    <Home :sr="sr" />
 
     <!--==================== LOGOS ====================-->
     <Logos />
@@ -36,6 +36,12 @@ export default {
     Value,
     Contact,
     Subscribe,
+  },
+  props: {
+    sr: {
+      type: Object,
+      required: true, // исправлено с 'requested' на 'required'
+    },
   },
 };
 </script>
