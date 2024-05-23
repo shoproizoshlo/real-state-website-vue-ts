@@ -41,13 +41,20 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import FooterLinks from "./FooterLinks.vue";
 export default {
   components: {
     FooterLinks,
   },
-  setup() {
+  props: {
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  setup(props) {
     const sections = ref([
       {
         title: "About",
@@ -82,6 +89,11 @@ export default {
         ],
       },
     ]);
+
+    onMounted(() => {
+      props.sr.reveal(".footer__container");
+      props.sr.reveal("..footer__info", { delay: 500 });
+    });
 
     return { sections };
   },
