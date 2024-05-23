@@ -5,12 +5,22 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
 export default {
   props: {
     url: {
       type: String,
       required: true,
     },
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
+    onMounted(() => {
+      props.sr.reveal(".logos__img", { interval: 100 });
+    });
   },
 };
 </script>

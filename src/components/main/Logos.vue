@@ -4,6 +4,7 @@
       class="pt-8 grid-cols-2 gap-y-12 gap-x-8 justify-items-center md:justify-center logos__container wrapper grid"
     >
       <LogosImg
+        :sr="sr"
         v-for="(logo, index) in logosUrl"
         :key="index"
         :url="logo.url"
@@ -18,6 +19,12 @@ import LogosImg from "./LogosImg.vue";
 
 export default {
   components: { LogosImg },
+  props: {
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
   setup() {
     const logosUrl = ref([
       {
