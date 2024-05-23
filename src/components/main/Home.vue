@@ -53,8 +53,9 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import HomeValue from "./HomeValue.vue";
+import ScrollReveal from "scrollreveal";
 
 export default {
   components: {
@@ -66,6 +67,23 @@ export default {
       { number: "2K", description1: "Happy", description2: "Customer" },
       { number: "28K", description1: "Awards", description2: "Winning" },
     ]);
+
+    onMounted(() => {
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+        // reset: true
+      });
+
+      sr.reveal(".home__title");
+      sr.reveal(".home__description", { delay: 500 });
+      sr.reveal(".home__search", { delay: 600 });
+      sr.reveal(".home__value", { delay: 700 });
+      sr.reveal(".home__images", { delay: 800, origin: "bottom" });
+    });
+
     return { values };
   },
 };
