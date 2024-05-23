@@ -61,7 +61,13 @@ export default {
   components: {
     HomeValue,
   },
-  setup() {
+  props: {
+    sr: {
+      type: Object,
+      required: true, // исправлено с 'requested' на 'required'
+    },
+  },
+  setup(props) {
     const values = ref([
       { number: "9K", description1: "Premium", description2: "Product" },
       { number: "2K", description1: "Happy", description2: "Customer" },
@@ -69,19 +75,19 @@ export default {
     ]);
 
     onMounted(() => {
-      const sr = ScrollReveal({
-        origin: "top",
-        distance: "60px",
-        duration: 2500,
-        delay: 400,
-        // reset: true
-      });
+      // const sr = ScrollReveal({
+      //   origin: "top",
+      //   distance: "60px",
+      //   duration: 2500,
+      //   delay: 400,
+      //   // reset: true
+      // });
 
-      sr.reveal(".home__title");
-      sr.reveal(".home__description", { delay: 500 });
-      sr.reveal(".home__search", { delay: 600 });
-      sr.reveal(".home__value", { delay: 700 });
-      sr.reveal(".home__images", { delay: 800, origin: "bottom" });
+      props.sr.reveal(".home__title");
+      props.sr.reveal(".home__description", { delay: 500 });
+      props.sr.reveal(".home__search", { delay: 600 });
+      props.sr.reveal(".home__value", { delay: 700 });
+      props.sr.reveal(".home__images", { delay: 800, origin: "bottom" });
     });
 
     return { values };
