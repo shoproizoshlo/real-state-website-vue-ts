@@ -64,7 +64,7 @@ export default {
   props: {
     sr: {
       type: Object,
-      required: true, // исправлено с 'requested' на 'required'
+      required: true,
     },
   },
   setup(props) {
@@ -75,14 +75,6 @@ export default {
     ]);
 
     onMounted(() => {
-      // const sr = ScrollReveal({
-      //   origin: "top",
-      //   distance: "60px",
-      //   duration: 2500,
-      //   delay: 400,
-      //   // reset: true
-      // });
-
       props.sr.reveal(".home__title");
       props.sr.reveal(".home__description", { delay: 500 });
       props.sr.reveal(".home__search", { delay: 600 });
