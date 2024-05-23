@@ -1,5 +1,8 @@
 <template>
-  <div class="value__images" :class="contact ? 'value__images-order' : ''">
+  <div
+    class="relative flex justify-center value__images"
+    :class="contact ? 'value__images-order' : ''"
+  >
     <div class="value__orbe"></div>
     <div class="value__img">
       <img :src="url" alt="value" />
@@ -23,19 +26,14 @@ export default {
 </script>
 
 <style scoped>
-.value__images {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
 .value__orbe {
   width: 266px;
   height: 316px;
-  background-color: hsl(228, 24%, 97%);
   border-radius: 135px 135px 16px 16px;
 }
-/* m-auto absolute overflow-hidden inset-0 */
+.value__orbe {
+  @apply bg-[#F6F6F9] dark:bg-container-color-dark;
+}
 .value__img {
   width: 250px;
   height: 300px;
