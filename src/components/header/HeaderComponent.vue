@@ -13,7 +13,7 @@
         <i class="bx bxs-home-heart text-base"></i
       ></a>
       <div
-        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color dark:bg-container-color-dark lg:bg-transparent dark:lg:bg-transparent duration-300 nav__menu"
+        class="my-0 mx-auto lg:ml-auto lg:mr-0 py-5 px-12 lg:px-0 fixed lg:relative inset-x-0 bottom-8 lg:bottom-0 bg-container-color dark:bg-container-color-dark lg:bg-transparent dark:lg:bg-transparent duration-300 dark:shadow-none nav__menu"
       >
         <ul class="flex justify-between items-center lg:gap-x-12 nav__list">
           <NavLink
