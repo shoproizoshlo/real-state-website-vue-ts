@@ -20,7 +20,20 @@
 </template>
 
 <script>
-export default {};
+import { onMounted } from "vue";
+export default {
+  props: {
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
+    onMounted(() => {
+      props.sr.reveal(".subscribe__container");
+    });
+  },
+};
 </script>
 
 <style scoped>
