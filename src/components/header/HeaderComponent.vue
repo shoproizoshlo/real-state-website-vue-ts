@@ -48,6 +48,7 @@ import NavLink from "./NavLink.vue";
 
 export default defineComponent({
   components: { NavLink },
+
   setup() {
     const isScrolled = ref(false);
     const sections = ref([

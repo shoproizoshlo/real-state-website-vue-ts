@@ -1,12 +1,12 @@
 <template>
   <!--==================== HEADER ====================-->
-  <HeaderComponent />
+  <HeaderComponent :sr="sr" />
 
   <!--==================== MAIN ====================-->
-  <MainComponent />
+  <MainComponent :sr="sr" />
 
   <!--==================== FOOTER ====================-->
-  <FooterComponent />
+  <FooterComponent :sr="sr" />
 
   <!--========== SCROLL UP ==========-->
   <a
@@ -22,6 +22,13 @@
 <script>
 // =============== BOXICONS ===============
 import "boxicons/css/boxicons.min.css";
+import ScrollReveal from "scrollreveal";
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+// import styles bundle
+import "swiper/css/bundle";
+
+import { ref, onMounted, onUnmounted } from "vue";
 
 import HeaderComponent from "./components/header/HeaderComponent.vue";
 import MainComponent from "./components/main/MainComponent.vue";
@@ -29,21 +36,12 @@ import FooterComponent from "./components/footer/FooterComponent.vue";
 
 // =============== SWIPER ===============
 // core version + navigation, pagination modules:
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-// import styles bundle
-import "swiper/css/bundle";
 
 // init Swiper:
 const swiper = new Swiper(".swiper", {
   // configure Swiper to use modules
   modules: [Navigation, Pagination],
 });
-
-// =============== SCROLLREVEAL ===============
-import ScrollReveal from "scrollreveal";
-
-import { ref, onMounted, onUnmounted } from "vue";
 
 export default {
   components: {
@@ -95,15 +93,29 @@ const scrollActive = () => {
     window.addEventListener("scroll", scrollActive);
   });
 };
+
+// =============== SCROLL REVEAL ANIMATION ===============
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+  // reset: true
+});
+
+sr.reveal(
+  ".home__title, .popular__container, .subscribe__container, .footer__container"
+);
+sr.reveal(".home__description, .footer__info", { delay: 500 });
+sr.reveal(".home__search", { delay: 600 });
+sr.reveal(".home__value", { delay: 700 });
+sr.reveal(".home__images", { delay: 800, origin: "bottom" });
+sr.reveal(".logos__img", { interval: 100 });
+sr.reveal(".value__images, contact__content", { origin: "left" });
+sr.reveal(".value__content, contact__images", { origin: "right" });
 </script>
 
 <style scoped>
-/* .active-link {
-  background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
-  color: #fff;
-  box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
-} */
-
 /*=============== SCROLL UP ===============*/
 .scrollup {
   bottom: -36%;
