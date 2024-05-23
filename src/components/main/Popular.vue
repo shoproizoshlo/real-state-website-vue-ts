@@ -118,14 +118,17 @@ export default {
   bottom: 0;
   width: initial;
   height: initial;
-  background-color: var(--container-color);
-  border: 2px solid var(--text-color-light);
+  /* background-color: var(--container-color); */
+  border: 2px solid;
   padding: 6px;
   border-radius: 0.5rem;
   font-size: 1.5rem;
-  color: var(--first-color);
+  /* color: var(--first-color); */
 }
-
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-first-color dark:text-first-color-dark bg-container-color dark:bg-container-color-dark border-text-color-light dark:border-border-color-dark;
+}
 .swiper-button-prev {
   left: calc(50% - 3rem);
 }
