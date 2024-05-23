@@ -9,7 +9,7 @@
         Get Started with Holux
       </h1>
       <p
-        class="mb-8 lg:px-32 lg:py-0 text-small-font-size lg:text-normal-font-size-large text-[D8E0FD] dark:text-text-color-dark subscribe__description"
+        class="mb-8 lg:px-32 lg:py-0 text-small-font-size lg:text-normal-font-size-large text-[#D8E0FD] dark:text-text-color-dark subscribe__description"
       >
         Subscribe and find super attractive price quotes from us, Find your
         residence soon
@@ -26,7 +26,7 @@ export default {};
 <style scoped>
 .subscribe__container {
   border-radius: 1.25rem;
-  border: 6px solid var(--first-color-light);
+  border: 6px solid;
 }
 .subscribe__container {
   @apply border-first-color-light dark:border-border-color-dark;
@@ -41,7 +41,7 @@ export default {};
   border: 2px solid #fff;
 }
 .subscribe__button:hover {
-  background-color: var(--first-color);
+  @apply bg-first-color dark:bg-first-color-dark;
 }
 
 @media screen and (max-width: 320px) {
