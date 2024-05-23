@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-4 lg:py-5 px-3 lg:pt-5 lg:pb-4 bg-body-color rounded-lg value__accordion-item"
+    class="py-4 lg:py-5 px-3 lg:pt-5 lg:pb-4 bg-body-color dark:bg-body-color-dark rounded-lg value__accordion-item"
     :class="{ 'accordion-open': isOpen }"
   >
     <header
@@ -8,14 +8,14 @@
       @click="toggleAccordion"
     >
       <i
-        class="bx mr-3 p-1 bg-first-color-lighten rounded text-lg text-first-color value__accordion-icon"
+        class="bx mr-3 p-1 bg-first-color-lighten dark:bg-border-color-dark rounded text-lg text-first-color dark:text-first-color-dark value__accordion-icon"
         :class="icon"
       ></i>
       <h3 class="text-small-font-size lg:text-normal-font-size-large">
         {{ title }}
       </h3>
       <div
-        class="ml-auto p-1 inline-flex bg-first-color-lighten text-lg text-first-color rounded-sm value__accordion-arrow"
+        class="ml-auto p-1 inline-flex bg-first-color-lighten dark:bg-border-color-dark text-lg text-first-color dark:text-first-color-dark rounded-sm value__accordion-arrow"
       >
         <i class="bx bxs-down-arrow" :class="{ 'bx-rotate-180': isOpen }"></i>
       </div>
@@ -83,7 +83,10 @@ export default {
 
 <style scoped>
 .value__accordion-item {
-  border: 2px solid var(--border-color);
+  border: 2px solid;
+}
+.value__accordion-item {
+  @apply border-border-color dark:border-border-color-dark;
 }
 .value__accordion-icon {
   transition: 0.3s;
