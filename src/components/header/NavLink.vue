@@ -2,7 +2,7 @@
   <li class="nav__item">
     <a
       :href="`#${id}`"
-      class="text-text-color lg:text-text-color-light flex p-2 rounded-full nav__link"
+      class="text-text-color dark:text-text-color-dark lg:text-text-color-light flex p-2 rounded-full nav__link"
       :class="{ 'active-link': active }"
     >
       <i class="" :class="`bx ${icon} text-xl inline`"></i>
@@ -39,7 +39,9 @@ export default {
 .active-link {
   background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
   box-shadow: 0 4px 8px hsla(228, 66%, 45%, 0.25);
-  color: #fff;
+}
+.active-link {
+  @apply text-body-color dark:text-body-color-dark;
 }
 
 @media screen and (min-width: 1023px) {
@@ -49,8 +51,10 @@ export default {
   .active-link {
     background: none;
     box-shadow: none;
-    color: var(--first-color);
     font-weight: var(--font-medium);
+  }
+  .active-link {
+    @apply text-first-color dark:text-first-color-dark;
   }
 }
 </style>
