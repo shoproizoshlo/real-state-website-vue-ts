@@ -30,13 +30,19 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import AccordionItem from "./AccordionItem.vue";
 import OrbeImg from "./OrbeImg.vue";
 
 export default {
   components: { AccordionItem, OrbeImg },
-  setup() {
+  props: {
+    sr: {
+      type: Object,
+      required: true,
+    },
+  },
+  setup(props) {
     const openIndex = ref(null);
     const accordionItems = ref([
       {
@@ -70,6 +76,12 @@ export default {
     };
 
     const contact = ref(false);
+
+    onMounted(() => {
+      props.sr.reveal(".home__value", { delay: 700 });
+      props.sr.reveal(".value__images", { origin: "left" });
+      props.sr.reveal(".value__content", { origin: "right" });
+    });
 
     return { accordionItems, openIndex, toggleAccordion, contact };
   },
