@@ -112,9 +112,11 @@ const scrollActive = () => {
   transition: 0.3s;
   animation: 0.4s hideScroll;
 }
+.scrollup {
+  @apply dark:shadow-none;
+}
 .scrollup:hover {
   transform: translateY(-0.25rem);
-  /* color: var(--first-color); */
 }
 /* Show Scroll Up*/
 .show-scroll {
