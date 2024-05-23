@@ -4,19 +4,19 @@
     <Home :sr="sr" />
 
     <!--==================== LOGOS ====================-->
-    <Logos />
+    <Logos :sr="sr" />
 
     <!--==================== POPULAR ====================-->
-    <Popular />
+    <Popular :sr="sr" />
 
     <!--==================== VALUE ====================-->
-    <Value />
+    <Value :sr="sr" />
 
     <!--==================== CONTACT ====================-->
-    <Contact />
+    <Contact :sr="sr" />
 
     <!--==================== SUBSCRIBE ====================-->
-    <Subscribe />
+    <Subscribe :sr="sr" />
   </main>
 </template>
 
@@ -40,7 +40,7 @@ export default {
   props: {
     sr: {
       type: Object,
-      required: true, // исправлено с 'requested' на 'required'
+      required: true,
     },
   },
 };
