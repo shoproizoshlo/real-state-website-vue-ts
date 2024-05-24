@@ -1,4 +1,4 @@
-# Frontend Mentor - Blogr landing page solution
+# Real State website
 
 This is a solution to the [Responsive Real Estate Website project](https://youtu.be/twRLgPsP1H0?si=eu02akj7nacKP3qX) on YouTube. The original project was developed using HTML, CSS, and JavaScript. This remake uses Vue, TypeScript and Tailwind CSS to enhance the functionality and design.
 
