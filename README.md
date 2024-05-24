@@ -36,7 +36,7 @@ Key Features:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://sue-real-state-website-vue-ts.netlify.app/
 
 ## My process
 
@@ -159,5 +159,4 @@ sr.reveal(".home__title");
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - X - [@suereact](https://www.x.com/suereact)
