@@ -181,6 +181,9 @@ button {
   .section {
     padding: 3.5rem 0 1rem;
   }
+  .button {
+    padding: 10px 28px;
+  }
 }
 @media screen and (min-width: 1023px) {
   .section {

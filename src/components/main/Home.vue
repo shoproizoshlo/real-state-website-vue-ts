@@ -123,6 +123,7 @@ export default {
 @media screen and (max-width: 320px) {
   .home__value {
     column-gap: 1rem;
+    font-size: 14px;
   }
   .home__img {
     width: 220px;

@@ -109,6 +109,9 @@ export default {
   .footer__content {
     gap: 2.5rem;
   }
+  .footer__info {
+    padding-bottom: 7rem;
+  }
 }
 @media screen and (min-width: 576px) {
   .footer__content {

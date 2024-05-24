@@ -124,6 +124,18 @@ const scrollActive = () => {
   animation: 0.7s showScroll;
 }
 
+@media screen and (min-width: 1023px) {
+  .scrollup {
+    animation: 0.4s hideScrollLargeScreens;
+  }
+  .show-scroll {
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    animation: 0.7s showScrollLargeScreens;
+  }
+}
+
 @keyframes showScroll {
   0% {
     bottom: 0;
@@ -132,12 +144,32 @@ const scrollActive = () => {
     bottom: 8rem;
   }
 }
+@keyframes showScrollLargeScreens {
+  0% {
+    right: 2rem;
+    bottom: 0;
+  }
+  100% {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
 @keyframes hideScroll {
   0% {
     bottom: 8rem;
   }
   100% {
     bottom: -1rem;
+  }
+}
+@keyframes hideScrollLargeScreens {
+  0% {
+    right: 2rem;
+    bottom: 2rem;
+  }
+  100% {
+    bottom: -3rem;
+    right: 2rem;
   }
 }
 </style>
