@@ -43,21 +43,16 @@
   </header>
 </template>
 <script lang="ts">
-import {
-  defineComponent,
-  ref,
-  onMounted,
-  onBeforeUnmount,
-  PropType,
-} from "vue";
+import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
 import NavLink from "./NavLink.vue";
+import { showAlertPropType } from "../../types/types";
 
 export default defineComponent({
   components: { NavLink },
 
   props: {
     showAlert: {
-      type: Function as PropType<(payload: MouseEvent) => void>,
+      type: showAlertPropType,
       required: true,
     },
   },

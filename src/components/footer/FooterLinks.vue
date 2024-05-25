@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts">
-import { PropType } from "vue";
+import { showAlertPropType } from "../../types/types";
 export default {
   props: {
     sections: {
@@ -37,7 +37,7 @@ export default {
       required: true,
     },
     showAlert: {
-      type: Function as PropType<(payload: MouseEvent) => void>,
+      type: showAlertPropType,
       required: true,
     },
   },

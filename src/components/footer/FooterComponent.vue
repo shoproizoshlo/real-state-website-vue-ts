@@ -43,7 +43,8 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted, PropType } from "vue";
+import { ref, onMounted } from "vue";
+import { showAlertPropType } from "../../types/types";
 import FooterLinks from "./FooterLinks.vue";
 export default {
   components: {
@@ -55,7 +56,7 @@ export default {
       required: true,
     },
     showAlert: {
-      type: Function as PropType<(payload: MouseEvent) => void>,
+      type: showAlertPropType,
       required: true,
     },
   },

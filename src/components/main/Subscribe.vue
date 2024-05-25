@@ -14,13 +14,19 @@
         Subscribe and find super attractive price quotes from us, Find your
         residence soon
       </p>
-      <a href="#" class="button subscribe__button" @click.stop.prevent="showAlert">Get Started</a>
+      <a
+        href="#"
+        class="button subscribe__button"
+        @click.stop.prevent="showAlert"
+        >Get Started</a
+      >
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { onMounted, PropType } from "vue";
+import { onMounted } from "vue";
+import { showAlertPropType } from "../../types/types";
 export default {
   props: {
     sr: {
@@ -28,7 +34,7 @@ export default {
       required: true,
     },
     showAlert: {
-      type: Function as PropType<(payload: MouseEvent) => void>,
+      type: showAlertPropType,
       required: true,
     },
   },

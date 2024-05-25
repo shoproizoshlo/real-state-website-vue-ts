@@ -6,7 +6,7 @@
   <MainComponent :sr="sr" :showAlert="showAlert" />
 
   <!--==================== FOOTER ====================-->
-  <FooterComponent :sr="sr" :showAlert="showAlert"/>
+  <FooterComponent :sr="sr" :showAlert="showAlert" />
 
   <!--========== SCROLL UP ==========-->
   <a

@@ -53,8 +53,9 @@
 </template>
 
 <script lang="ts">
-import { ref, onMounted, PropType } from "vue";
+import { ref, onMounted } from "vue";
 import HomeValue from "./HomeValue.vue";
+import { showAlertPropType } from "../../types/types";
 
 export default {
   components: {
@@ -66,7 +67,7 @@ export default {
       required: true,
     },
     showAlert: {
-      type: Function as PropType<(payload: MouseEvent) => void>,
+      type: showAlertPropType,
       required: true,
     },
   },

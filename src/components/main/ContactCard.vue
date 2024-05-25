@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { PropType } from "vue";
+import { showAlertPropType } from "../../types/types";
 export default {
   props: {
     icon: { type: String, required: true },
@@ -30,7 +30,7 @@ export default {
     description: { type: String, required: true },
     button: { type: String, required: true },
     showAlert: {
-      type: Function as PropType<(payload: MouseEvent) => void>,
+      type: showAlertPropType,
       required: true,
     },
   },
