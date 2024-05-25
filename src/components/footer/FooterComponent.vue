@@ -13,7 +13,7 @@
         </p>
       </div>
       <div class="grid gap-y-10 gap-x-16 footer__content">
-        <FooterLinks :sections="sections" />
+        <FooterLinks :sections="sections" :showAlert="showAlert" />
       </div>
     </div>
     <div
@@ -28,11 +28,13 @@
         <a
           href="#"
           class="text-smaller-font-size text-text-color dark:text-text-color-dark gont-font-medium"
+          @click.stop.prevent="showAlert"
           >Terms & Agreements</a
         >
         <a
           href="#"
           class="text-smaller-font-size text-text-color dark:text-text-color-dark gont-font-medium"
+          @click.stop.prevent="showAlert"
           >Privacy Policy</a
         >
       </div>
@@ -40,8 +42,8 @@
   </footer>
 </template>
 
-<script>
-import { ref, onMounted } from "vue";
+<script lang="ts">
+import { ref, onMounted, PropType } from "vue";
 import FooterLinks from "./FooterLinks.vue";
 export default {
   components: {
@@ -50,6 +52,10 @@ export default {
   props: {
     sr: {
       type: Object,
+      required: true,
+    },
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
       required: true,
     },
   },

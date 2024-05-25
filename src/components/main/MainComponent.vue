@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <!--==================== HOME ====================-->
-    <Home :sr="sr" />
+    <Home :sr="sr" :showAlert="showAlert" />
 
     <!--==================== LOGOS ====================-->
     <Logos :sr="sr" />
@@ -13,14 +13,15 @@
     <Value :sr="sr" />
 
     <!--==================== CONTACT ====================-->
-    <Contact :sr="sr" />
+    <Contact :sr="sr" :showAlert="showAlert" />
 
     <!--==================== SUBSCRIBE ====================-->
-    <Subscribe :sr="sr" />
+    <Subscribe :sr="sr" :showAlert="showAlert" />
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from "vue";
 import Home from "./Home.vue";
 import Logos from "./Logos.vue";
 import Popular from "./Popular.vue";
@@ -40,6 +41,10 @@ export default {
   props: {
     sr: {
       type: Object,
+      required: true,
+    },
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
       required: true,
     },
   },

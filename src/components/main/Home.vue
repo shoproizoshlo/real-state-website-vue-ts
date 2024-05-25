@@ -26,7 +26,7 @@
             placeholder="Search by location..."
             class="my-0 mx-2 w-11/12 bg-body-color dark:bg-body-color-dark text-text-color dark:text-text-color-dark dark:shadow-none home__search-input"
           />
-          <button class="button">Search</button>
+          <button class="button" @click.stop.prevent="showAlert">Search</button>
         </form>
 
         <div class="flex gap-x-10 lg:gap-x-14 home__value">
@@ -52,10 +52,9 @@
   </section>
 </template>
 
-<script>
-import { ref, onMounted } from "vue";
+<script lang="ts">
+import { ref, onMounted, PropType } from "vue";
 import HomeValue from "./HomeValue.vue";
-import ScrollReveal from "scrollreveal";
 
 export default {
   components: {
@@ -64,6 +63,10 @@ export default {
   props: {
     sr: {
       type: Object,
+      required: true,
+    },
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
       required: true,
     },
   },

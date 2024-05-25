@@ -7,6 +7,7 @@
       <li v-for="link in section.links" :key="link.text">
         <a
           :href="link.href"
+          @click.stop.prevent="showAlert"
           class="text-small-font-size text-text-color dark:text-text-color-dark hover:text-title-color dark:hover:text-title-color-dark font-font-medium duration-300 footer__link"
           >{{ link.text }}</a
         >
@@ -16,6 +17,7 @@
       <li v-for="socialLink in section.socialLinks" :key="socialLink.href">
         <a
           :href="socialLink.href"
+          @click.stop.prevent="showAlert"
           target="_blank"
           class="text-xl text-text-color dark:text-text-color-dark hover:text-title-color dark:hover:text-title-color-dark duration-300 footer__social-link"
         >
@@ -26,11 +28,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from "vue";
 export default {
   props: {
     sections: {
       type: Array,
+      required: true,
+    },
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
       required: true,
     },
   },

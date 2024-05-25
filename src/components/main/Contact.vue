@@ -22,6 +22,7 @@
             :title="contact.title"
             :description="contact.description"
             :button="contact.button"
+            :showAlert="showAlert"
           />
         </div>
       </div>
@@ -29,8 +30,8 @@
   </section>
 </template>
 
-<script>
-import { ref, onMounted } from "vue";
+<script lang="ts">
+import { ref, onMounted, PropType } from "vue";
 import ContactCard from "./ContactCard.vue";
 import OrbeImg from "./OrbeImg.vue";
 
@@ -42,6 +43,10 @@ export default {
   props: {
     sr: {
       type: Object,
+      required: true,
+    },
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
       required: true,
     },
   },

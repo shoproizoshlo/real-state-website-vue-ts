@@ -15,19 +15,24 @@
         </p>
       </div>
     </div>
-    <button class="button contact__card-button">
+    <button class="button contact__card-button" @click.stop.prevent="showAlert">
       {{ button }}
     </button>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from "vue";
 export default {
   props: {
     icon: { type: String, required: true },
     title: { type: String, required: true },
     description: { type: String, required: true },
     button: { type: String, required: true },
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
+      required: true,
+    },
   },
 };
 </script>

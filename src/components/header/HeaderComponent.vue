@@ -38,16 +38,29 @@
         @click="toggleTheme"
       ></i>
 
-      <a href="#" class="button nav__button"> Subscribe </a>
+      <a href="#" class="button nav__button" @click="showAlert"> Subscribe </a>
     </nav>
   </header>
 </template>
 <script lang="ts">
-import { defineComponent, ref, onMounted, onBeforeUnmount } from "vue";
+import {
+  defineComponent,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+  PropType,
+} from "vue";
 import NavLink from "./NavLink.vue";
 
 export default defineComponent({
   components: { NavLink },
+
+  props: {
+    showAlert: {
+      type: Function as PropType<(payload: MouseEvent) => void>,
+      required: true,
+    },
+  },
 
   setup() {
     const isScrolled = ref(false);
@@ -88,24 +101,6 @@ export default defineComponent({
     });
 
     /*=============== DARK LIGHT THEME ===============*/
-    // const isDarkMode = ref(false);
-
-    // const toggleDarkMode = () => {
-    //   isDarkMode.value = !isDarkMode.value;
-    //   document.documentElement.classList.toggle("dark", isDarkMode.value);
-    //   localStorage.theme = isDarkMode.value ? "dark" : "light";
-    // };
-
-    // onMounted(() => {
-    //   isDarkMode.value =
-    //     localStorage.theme === "dark" ||
-    //     (!("theme" in localStorage) &&
-    //       window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    //   if (isDarkMode.value) {
-    //     document.documentElement.classList.add("dark");
-    //   }
-    // });
     const isDark = ref(false);
 
     onMounted(() => {
@@ -121,7 +116,13 @@ export default defineComponent({
       }
     };
 
-    return { isScrolled, sections, activeSection, isDark, toggleTheme };
+    return {
+      isScrolled,
+      sections,
+      activeSection,
+      isDark,
+      toggleTheme,
+    };
   },
 });
 </script>

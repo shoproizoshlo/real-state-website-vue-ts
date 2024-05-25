@@ -1,12 +1,12 @@
 <template>
   <!--==================== HEADER ====================-->
-  <HeaderComponent :sr="sr" />
+  <HeaderComponent :sr="sr" :showAlert="showAlert" />
 
   <!--==================== MAIN ====================-->
-  <MainComponent :sr="sr" />
+  <MainComponent :sr="sr" :showAlert="showAlert" />
 
   <!--==================== FOOTER ====================-->
-  <FooterComponent :sr="sr" />
+  <FooterComponent :sr="sr" :showAlert="showAlert"/>
 
   <!--========== SCROLL UP ==========-->
   <a
@@ -76,7 +76,10 @@ export default {
       // reset: true
     });
 
-    return { showScroll, sr };
+    // =============== ALERT ===============
+    const showAlert = () => alert("It's just a website sample");
+
+    return { showScroll, sr, showAlert };
   },
 };
 
